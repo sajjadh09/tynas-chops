@@ -8,24 +8,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap"
     />
     <link rel="stylesheet" href="hark.css" />
     <link rel="stylesheet" href="hark-hero.css" />
     <style>
       .x-body {
-        --x-cream: #fbf5ec;
-        --x-paper: #fffdf9;
-        --x-sand: #f4e8d6;
-        --x-choc: #3b2416;
-        --x-choc-2: #6b5040;
-        --x-caramel: #a8571b;
-        --x-caramel-dark: #8a4512;
-        --x-caramel-soft: #f7e3c9;
-        --x-line: #e9dac5;
+        --x-cream: #fff7ec;
+        --x-paper: #ffffff;
+        --x-sand: #fdeccb;
+        --x-choc: #17301f;
+        --x-choc-2: #4d5f52;
+        --x-caramel: #d23a1c;
+        --x-caramel-dark: #a92a10;
+        --x-caramel-soft: #ffd25c;
+        --x-line: #f0dfc4;
         --x-wa: #128c4a;
-        --x-serif: "Fraunces", Georgia, serif;
-        --x-shadow: 0 1px 2px rgba(59, 36, 22, 0.06), 0 8px 24px rgba(59, 36, 22, 0.08);
+        --x-serif: "Bricolage Grotesque", system-ui, sans-serif;
+        --x-shadow: 0 1px 2px rgba(23, 48, 31, 0.06), 0 10px 28px rgba(23, 48, 31, 0.10);
         background: var(--x-cream);
         color: var(--x-choc);
         color-scheme: light;
@@ -175,7 +175,7 @@
       .x-info dd { margin: 2px 0 0; grid-column: 2; font: var(--type-body); }
       .x-info .x-ico { grid-row: span 2; width: 36px; height: 36px; border-radius: 50%; background: var(--x-sand); display: flex; align-items: center; justify-content: center; color: var(--x-caramel); }
       .x-hours { display: grid; grid-template-columns: auto 1fr; gap: 2px 16px; }
-      .x-map { position: relative; border-radius: var(--r-l); overflow: hidden; min-height: 280px; background: #efe3cf; display: flex; align-items: flex-end; padding: 16px; text-decoration: none; border: 1px solid var(--x-line); }
+      .x-map { position: relative; border-radius: var(--r-l); overflow: hidden; min-height: 280px; background: #fdeccb; display: flex; align-items: flex-end; padding: 16px; text-decoration: none; border: 1px solid var(--x-line); }
       .x-map svg.x-map__art { position: absolute; inset: 0; width: 100%; height: 100%; }
       .x-map__card { position: relative; background: var(--x-paper); border-radius: var(--r-m); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-shadow: var(--x-shadow); }
       .x-map__card strong { display: block; font-family: var(--x-serif); font-size: 18px; }
@@ -294,6 +294,37 @@
         .x-drawer, .x-modal__panel, .x-toast, .x-scrim { transition: none; }
         .x-spin { animation-duration: 2s; }
       }
+
+      /* Tyna's overrides: full-bleed hero, bold type, dark trust band */
+      .x-body h1, .x-body h2, .x-body h3 { font-weight: 800; letter-spacing: -0.02em; }
+      .x-hero { position: relative; display: block; border: 0; border-radius: 28px; min-height: 560px; background: var(--x-choc); }
+      .x-hero img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+      .x-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,22,14,0.05) 25%, rgba(10,22,14,0.88) 80%); }
+      .x-hero__copy { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; min-height: 560px; padding: 28px 22px; }
+      .x-hero h1, .x-body .x-hero h1 { color: #fff; font-size: clamp(38px, 9vw, 72px); line-height: 0.98; text-transform: uppercase; max-width: 12ch; }
+      .x-hero .x-eyebrow { display: inline-block; align-self: flex-start; background: var(--x-caramel-soft); color: var(--x-choc); padding: 6px 12px; border-radius: 999px; }
+      .x-hero__sub, .x-hero__meta { color: rgba(255,255,255,0.88); }
+      .x-hero .x-btn--ghost { background: rgba(255,255,255,0.95); border-color: transparent; }
+      @media (min-width: 880px) {
+        .x-hero { display: block; min-height: 600px; }
+        .x-hero img { min-height: 0; height: 100%; }
+        .x-hero__copy { min-height: 600px; padding: 56px; }
+      }
+      .x-trust { background: var(--x-choc); border-radius: 20px; padding: 10px; }
+      .x-trust li { background: rgba(255,255,255,0.07); color: #fff; }
+      .x-trust svg { color: var(--x-caramel-soft); }
+      .x-card { border-radius: 22px; border-width: 2px; }
+      .x-card__tag { background: var(--x-caramel); color: #fff; }
+      .x-price { background: var(--x-caramel-soft); color: var(--x-choc); padding: 2px 10px; border-radius: 999px; font-size: 16px; }
+      .x-filter[aria-pressed="true"] { background: var(--x-caramel); border-color: var(--x-caramel); }
+      .x-events { margin-top: 56px; background: var(--x-caramel); color: #fff; border-radius: 28px; padding: 32px 22px; display: grid; gap: 20px; }
+      .x-events h2, .x-body .x-events h2 { color: #fff; font-size: clamp(30px, 6vw, 44px); line-height: 1.02; text-transform: uppercase; }
+      .x-events p { margin: 10px 0 0; color: rgba(255,255,255,0.9); font-size: 16px; }
+      .x-events ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+      .x-events li { background: rgba(255,255,255,0.12); border-radius: 16px; padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; font-weight: 600; }
+      .x-events li b { color: var(--x-caramel-soft); white-space: nowrap; }
+      .x-events .x-btn { background: #fff; color: var(--x-choc); justify-self: start; }
+      @media (min-width: 880px) { .x-events { grid-template-columns: 1fr 1fr; align-items: center; padding: 48px; } }
     </style>
   </head>
   <body class="x-body">
@@ -305,11 +336,12 @@
 
       <header class="x-header">
         <a class="x-logo" href="#top" aria-label="Tyna's Chops, home">
-          <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#a8571b"/><path d="M8 19c0-5 3.6-8.5 8-8.5s8 3.5 8 8.5v1.5H8z" fill="#fbf5ec"/><path d="M12 15.5c1-1.4 2.4-2.1 4-2.1s3 .7 4 2.1" fill="none" stroke="#a8571b" stroke-width="1.6" stroke-linecap="round"/><rect x="8" y="21.5" width="16" height="2.5" rx="1.25" fill="#fbf5ec"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#d23a1c"/><path d="M7 15h18v3a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7z" fill="#ffd25c"/><rect x="5" y="13" width="22" height="2.6" rx="1.3" fill="#fff"/><path d="M12 10c0-1.5 1.5-1.5 1.5-3M16 10c0-1.5 1.5-1.5 1.5-3M20 10c0-1.5 1.5-1.5 1.5-3" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
           <span>Tyna's <em>Chops</em></span>
         </a>
         <nav class="x-menu" aria-label="Main">
-          <a href="#shop">Shop</a>
+          <a href="#shop">Menu</a>
+          <a href="#events">Events</a>
                     <a href="#visit">Visit us</a>
         </nav>
         <button class="x-cartbtn" type="button" id="cart-open" aria-label="Open cart, 0 items">
@@ -466,6 +498,21 @@
         </section>
 
 
+        <section class="x-events" id="events" aria-labelledby="events-title">
+          <div>
+            <h2 id="events-title">Planning a party?</h2>
+            <p>Birthdays, weddings, office lunches and owambes. Tell us your date and headcount and we'll put together trays, chops and cake for you. Give us 24 hours' notice.</p>
+          </div>
+          <div>
+            <ul>
+              <li><span>Food platter, serves 2–10</span><b>₦18,000</b></li>
+              <li><span>Cake + small chops combo</span><b>₦92,000</b></li>
+              <li><span>Office &amp; event catering</span><b>Get a quote</b></li>
+            </ul>
+            <p><a class="x-btn" href="https://wa.me/2347036835867?text=Hi%20Tyna's%20Chops%2C%20I'd%20like%20a%20quote%20for%20an%20event" target="_blank" rel="noopener">Get a quote on WhatsApp</a></p>
+          </div>
+        </section>
+
         <section class="x-section" id="visit" aria-labelledby="visit-title">
           <div class="x-section__head">
             <p class="x-eyebrow">Visit us</p>
@@ -494,16 +541,16 @@
             </div>
             <a class="x-map" href="https://www.google.com/maps/search/?api=1&amp;query=Plot%20457%20Margaret%20Ekpo%20Street%20First%20Avenue%20Gwarinpa%20Abuja" target="_blank" rel="noopener" aria-label="Open Tyna's Chops in Google Maps">
               <svg class="x-map__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <rect width="400" height="300" fill="#efe3cf"/>
+                <rect width="400" height="300" fill="#fdeccb"/>
                 <path d="M-10 210 L410 150" stroke="#fffdf9" stroke-width="22"/>
                 <path d="M120 -10 L170 310" stroke="#fffdf9" stroke-width="14"/>
                 <path d="M290 -10 L250 310" stroke="#fffdf9" stroke-width="10"/>
                 <path d="M-10 80 L410 60" stroke="#fffdf9" stroke-width="8"/>
-                <rect x="30" y="100" width="70" height="60" rx="8" fill="#e4d3b8"/>
-                <rect x="190" y="80" width="40" height="50" rx="8" fill="#e4d3b8"/>
+                <rect x="30" y="100" width="70" height="60" rx="8" fill="#f6d9a8"/>
+                <rect x="190" y="80" width="40" height="50" rx="8" fill="#f6d9a8"/>
                 <rect x="310" y="90" width="70" height="40" rx="8" fill="#dcebd2"/>
-                <rect x="190" y="210" width="45" height="60" rx="8" fill="#e4d3b8"/>
-                <g transform="translate(200 120)"><path d="M0 0c-14 0-24 10-24 23 0 17 24 37 24 37s24-20 24-37C24 10 14 0 0 0z" fill="#a8571b"/><circle cx="0" cy="23" r="9" fill="#fbf5ec"/></g>
+                <rect x="190" y="210" width="45" height="60" rx="8" fill="#f6d9a8"/>
+                <g transform="translate(200 120)"><path d="M0 0c-14 0-24 10-24 23 0 17 24 37 24 37s24-20 24-37C24 10 14 0 0 0z" fill="#d23a1c"/><circle cx="0" cy="23" r="9" fill="#fff7ec"/></g>
               </svg>
               <span class="x-map__card"><span><strong>Tyna's Chops</strong><span>First Avenue, Gwarinpa</span></span><span class="x-map__go">Get directions</span></span>
             </a>
