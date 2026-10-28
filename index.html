@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tyna's Chops · Food trays, cakes & small chops in Gwarinpa, Abuja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      .x-body {
+        --x-cream: #fbf5ec;
+        --x-paper: #fffdf9;
+        --x-sand: #f4e8d6;
+        --x-choc: #3b2416;
+        --x-choc-2: #6b5040;
+        --x-caramel: #a8571b;
+        --x-caramel-dark: #8a4512;
+        --x-caramel-soft: #f7e3c9;
+        --x-line: #e9dac5;
+        --x-wa: #128c4a;
+        --x-serif: "Fraunces", Georgia, serif;
+        --x-shadow: 0 1px 2px rgba(59, 36, 22, 0.06), 0 8px 24px rgba(59, 36, 22, 0.08);
+        background: var(--x-cream);
+        color: var(--x-choc);
+        color-scheme: light;
+      }
+      .x-body.x-lock { overflow: hidden; }
+      .x-body .page { gap: 0; padding-bottom: 0; }
+      .x-body h1, .x-body h2, .x-body h3 { font-family: var(--x-serif); color: var(--x-choc); letter-spacing: -0.01em; margin: 0; }
+      .x-body a { color: inherit; }
+      .x-body :focus-visible { outline: 2px solid var(--x-caramel); outline-offset: 2px; }
+      .x-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+      /* banner */
+      .x-banner { display: flex; align-items: center; gap: 8px; justify-content: center; background: var(--x-choc); color: var(--x-cream); font: var(--type-small); border-radius: var(--r-s); padding: 4px 4px 4px 14px; margin-bottom: 8px; text-align: center; }
+      .x-banner p { margin: 0; flex: 1; }
+      .x-banner button { min-width: var(--tap); min-height: var(--tap); border: 0; background: transparent; color: inherit; font-size: 20px; cursor: pointer; border-radius: var(--r-s); }
+
+      /* header */
+      .x-header { position: sticky; top: 8px; z-index: 40; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; background: rgba(255, 253, 249, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--x-line); border-radius: var(--r-l); padding: 6px 6px 6px 16px; box-shadow: var(--x-shadow); }
+      .x-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--x-serif); font-weight: 700; font-size: 20px; min-height: var(--tap); }
+      .x-logo svg { flex: none; }
+      .x-logo span em { font-style: normal; color: var(--x-caramel); }
+      .x-menu { display: flex; gap: 2px; order: 3; width: 100%; justify-content: center; border-top: 1px solid var(--x-line); padding-top: 2px; }
+      .x-menu a { text-decoration: none; font: var(--type-label); font-weight: var(--weight-medium); padding: 0 14px; min-height: var(--tap); display: inline-flex; align-items: center; border-radius: var(--r-pill); }
+      .x-menu a:hover { background: var(--x-sand); }
+      .x-cartbtn { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: var(--tap); padding: 0 16px; border: 0; border-radius: var(--r-pill); background: var(--x-choc); color: var(--x-cream); font: var(--type-label); font-weight: var(--weight-medium); cursor: pointer; }
+      .x-badge { min-width: 22px; height: 22px; border-radius: var(--r-pill); background: var(--x-caramel-soft); color: var(--x-choc); font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; padding: 0 6px; transition: transform var(--dur-quick) var(--ease-out); }
+      .x-badge.x-bump { transform: scale(1.3); }
+      @media (min-width: 720px) {
+        .x-menu { order: 0; width: auto; border: 0; padding: 0; }
+      }
+
+      /* buttons */
+      .x-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: var(--r-pill); border: 1.5px solid transparent; font: var(--type-body); font-weight: 600; text-decoration: none; cursor: pointer; transition: background var(--dur-quick) var(--ease-out), transform var(--dur-quick) var(--ease-out); }
+      .x-btn:active { transform: scale(0.98); }
+      .x-btn--primary { background: var(--x-caramel); color: #fff; }
+      .x-btn--primary:hover { background: var(--x-caramel-dark); }
+      .x-btn--ghost { background: var(--x-paper); color: var(--x-choc); border-color: var(--x-line); }
+      .x-btn--ghost:hover { background: var(--x-sand); }
+      .x-btn--wa { background: var(--x-wa); color: #fff; }
+      .x-btn--wa:hover { filter: brightness(0.92); }
+      .x-btn--dark { background: var(--x-choc); color: var(--x-cream); }
+      .x-btn--block { width: 100%; }
+      .x-btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+      .x-body .x-btn--primary, .x-body .x-btn--wa { color: #fff; }
+
+      /* hero */
+      .x-hero { margin-top: 16px; background: var(--x-paper); border: 1px solid var(--x-line); border-radius: var(--r-xl); overflow: hidden; display: grid; box-shadow: var(--x-shadow); }
+      .x-hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+      .x-hero__copy { padding: 24px 20px 28px; }
+      .x-eyebrow { font: var(--type-tag); text-transform: uppercase; letter-spacing: 0.08em; color: var(--x-caramel); font-weight: 600; margin: 0 0 10px; }
+      .x-hero h1 { font-size: clamp(34px, 8.5vw, 58px); line-height: 1.04; font-weight: 600; }
+      .x-hero__sub { font-size: 17px; line-height: 1.5; color: var(--x-choc-2); margin: 14px 0 22px; max-width: 34em; }
+      .x-hero__ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+      .x-hero__ctas .x-btn { flex: 1 1 160px; }
+      .x-hero__meta { margin: 18px 0 0; font: var(--type-small); color: var(--x-choc-2); }
+      @media (min-width: 880px) {
+        .x-hero { grid-template-columns: 1fr 1.1fr; align-items: center; }
+        .x-hero img { aspect-ratio: auto; height: 100%; min-height: 480px; order: 2; }
+        .x-hero__copy { padding: 48px; }
+        .x-hero__ctas .x-btn { flex: 0 0 auto; }
+      }
+
+      /* trust */
+      .x-trust { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .x-trust li { display: flex; align-items: center; gap: 10px; background: var(--x-sand); border-radius: var(--r-m); padding: 12px; font: var(--type-small); font-weight: 500; line-height: 1.3; }
+      .x-trust svg { flex: none; color: var(--x-caramel); }
+      @media (min-width: 880px) { .x-trust { grid-template-columns: repeat(4, 1fr); } .x-trust li { padding: 16px; font: var(--type-label); font-weight: 500; } }
+
+      /* sections */
+      .x-section { padding-top: 56px; scroll-margin-top: 110px; }
+      .x-section__head { margin-bottom: 20px; }
+      .x-section__head h2 { font-size: clamp(28px, 6vw, 40px); font-weight: 600; line-height: 1.1; }
+      .x-section__head p:not(.x-eyebrow) { color: var(--x-choc-2); margin: 8px 0 0; font-size: 16px; }
+
+      /* filters */
+      .x-filters { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 calc(var(--gutter) * -1) 10px; padding-inline: var(--gutter); scrollbar-width: none; }
+      .x-filters::-webkit-scrollbar { display: none; }
+      .x-filter { flex: none; min-height: var(--tap); padding: 0 18px; border-radius: var(--r-pill); border: 1.5px solid var(--x-line); background: var(--x-paper); color: var(--x-choc); font: var(--type-label); font-weight: 500; cursor: pointer; }
+      .x-filter[aria-pressed="true"] { background: var(--x-choc); border-color: var(--x-choc); color: var(--x-cream); }
+
+      /* products */
+      .x-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+      @media (min-width: 600px) { .x-grid { grid-template-columns: 1fr 1fr; } }
+      @media (min-width: 980px) { .x-grid { grid-template-columns: repeat(3, 1fr); } }
+      .x-card { background: var(--x-paper); border: 1px solid var(--x-line); border-radius: var(--r-l); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--x-shadow); }
+      .x-card[hidden] { display: none; }
+      .x-card__media { position: relative; background: var(--x-sand); }
+      .x-card__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+      .x-card__tag { position: absolute; top: 12px; left: 12px; background: rgba(255, 253, 249, 0.94); border-radius: var(--r-pill); padding: 4px 10px; font: var(--type-tag); font-weight: 600; }
+      .x-card__body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+      .x-card__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+      .x-card h3 { font-size: 21px; font-weight: 600; line-height: 1.2; }
+      .x-price { font-weight: 600; font-size: 17px; white-space: nowrap; color: var(--x-caramel-dark); }
+      .x-card__desc { margin: -6px 0 0; color: var(--x-choc-2); font: var(--type-label); line-height: 1.45; }
+      .x-opts { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+      .x-opts legend { font: var(--type-tag); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--x-choc-2); margin-bottom: 6px; padding: 0; }
+      .x-opt { position: relative; }
+      .x-opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+      .x-opt span { display: inline-flex; flex-direction: column; justify-content: center; min-height: var(--tap); padding: 4px 12px; border-radius: var(--r-s); border: 1.5px solid var(--x-line); font: var(--type-small); font-weight: 500; line-height: 1.2; }
+      .x-opt span small { color: var(--x-choc-2); font-weight: 400; font-size: 12px; }
+      .x-opt input:checked + span { border-color: var(--x-choc); background: var(--x-sand); }
+      .x-opt input:focus-visible + span { outline: 2px solid var(--x-caramel); outline-offset: 2px; }
+      .x-field { display: grid; gap: 6px; }
+      .x-field label, .x-field .x-label { font: var(--type-small); font-weight: 600; }
+      .x-field label small { font-weight: 400; color: var(--x-choc-2); }
+      .x-input { width: 100%; min-height: 48px; padding: 10px 14px; border-radius: var(--r-s); border: 1.5px solid var(--x-line); background: #fff; color: var(--x-choc); font: var(--type-body); font-size: 16px; box-sizing: border-box; }
+      .x-input:focus { outline: none; border-color: var(--x-caramel); box-shadow: 0 0 0 3px var(--x-caramel-soft); }
+      textarea.x-input { min-height: 84px; resize: vertical; }
+      .x-input.x-invalid { border-color: #b3261e; }
+      .x-err { color: #b3261e; font: var(--type-small); margin: 0; }
+      .x-buy { display: flex; gap: 10px; margin-top: auto; }
+      .x-buy .x-btn { flex: 1; }
+      .x-step { display: inline-flex; align-items: center; border: 1.5px solid var(--x-line); border-radius: var(--r-pill); background: #fff; }
+      .x-step button { width: 44px; height: 44px; border: 0; background: transparent; color: var(--x-choc); font-size: 20px; cursor: pointer; border-radius: var(--r-pill); }
+      .x-step button:hover { background: var(--x-sand); }
+      .x-step output, .x-step input { width: 28px; text-align: center; font-weight: 600; border: 0; background: transparent; color: var(--x-choc); font-size: 16px; padding: 0; }
+      .x-step--sm button { width: 44px; height: 44px; font-size: 18px; }
+      .x-foot a { display: inline-flex; align-items: center; min-height: var(--tap); }
+
+      /* classes */
+      .x-plans { display: grid; gap: 16px; }
+      @media (min-width: 720px) { .x-plans { grid-template-columns: 1fr 1fr; } }
+      .x-plan { background: var(--x-paper); border: 1px solid var(--x-line); border-radius: var(--r-l); padding: 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--x-shadow); }
+      .x-plan--pro { background: var(--x-choc); color: var(--x-cream); border-color: var(--x-choc); }
+      .x-plan--pro h3, .x-plan--pro .x-plan__price { color: var(--x-cream); }
+      .x-plan--pro .x-plan__term, .x-plan--pro li { color: #ecdcc8; }
+      .x-plan h3 { font-size: 22px; font-weight: 600; }
+      .x-plan__price { font-family: var(--x-serif); font-size: 40px; font-weight: 600; line-height: 1; margin: 0; }
+      .x-plan__term { margin: -6px 0 0; color: var(--x-choc-2); font: var(--type-label); }
+      .x-plan ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+      .x-plan li { display: flex; gap: 10px; align-items: flex-start; font: var(--type-label); }
+      .x-plan li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; background: var(--x-caramel-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%238a4512' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 18px no-repeat; }
+      .x-plan .x-btn { margin-top: auto; }
+      .x-flag { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; background: var(--x-caramel-soft); color: var(--x-caramel-dark); border-radius: var(--r-pill); padding: 4px 12px; font: var(--type-tag); font-weight: 600; }
+      .x-flag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--x-caramel); }
+      .x-classnote { margin: 16px 0 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; background: var(--x-sand); border-radius: var(--r-l); padding: 18px 20px; }
+      .x-classnote p { margin: 0; font: var(--type-label); }
+
+      /* visit */
+      .x-visit { display: grid; gap: 16px; }
+      @media (min-width: 820px) { .x-visit { grid-template-columns: 1.1fr 1fr; } }
+      .x-info { background: var(--x-paper); border: 1px solid var(--x-line); border-radius: var(--r-l); padding: 8px 20px; box-shadow: var(--x-shadow); }
+      .x-info dl { margin: 0; }
+      .x-info .x-row { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--x-line); }
+      .x-info .x-row:last-child { border-bottom: 0; }
+      .x-info dt { font: var(--type-tag); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--x-choc-2); grid-column: 2; }
+      .x-info dd { margin: 2px 0 0; grid-column: 2; font: var(--type-body); }
+      .x-info .x-ico { grid-row: span 2; width: 36px; height: 36px; border-radius: 50%; background: var(--x-sand); display: flex; align-items: center; justify-content: center; color: var(--x-caramel); }
+      .x-hours { display: grid; grid-template-columns: auto 1fr; gap: 2px 16px; }
+      .x-map { position: relative; border-radius: var(--r-l); overflow: hidden; min-height: 280px; background: #efe3cf; display: flex; align-items: flex-end; padding: 16px; text-decoration: none; border: 1px solid var(--x-line); }
+      .x-map svg.x-map__art { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .x-map__card { position: relative; background: var(--x-paper); border-radius: var(--r-m); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-shadow: var(--x-shadow); }
+      .x-map__card strong { display: block; font-family: var(--x-serif); font-size: 18px; }
+      .x-map__card span { font: var(--type-small); color: var(--x-choc-2); }
+      .x-map__card .x-map__go { flex: none; background: var(--x-caramel); color: #fff; border-radius: var(--r-pill); padding: 10px 14px; font: var(--type-small); font-weight: 600; }
+
+      /* footer */
+      .x-foot { margin-top: 64px; padding: 28px 0 110px; border-top: 1px solid var(--x-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 20px; font: var(--type-small); color: var(--x-choc-2); }
+      .x-foot p { margin: 0; }
+      .x-foot a { color: var(--x-choc); }
+
+      /* floating whatsapp + mobile cart bar */
+      .x-wa { position: fixed; right: 16px; bottom: 16px; z-index: 45; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(18, 140, 74, 0.35); transition: bottom var(--dur-quick) var(--ease-out); }
+      .x-has-bar .x-wa { bottom: 88px; }
+      .x-cartbar { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 44; display: none; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 0 8px 0 20px; border: 0; border-radius: var(--r-pill); background: var(--x-choc); color: var(--x-cream); font: var(--type-body); font-weight: 600; box-shadow: 0 10px 28px rgba(59, 36, 22, 0.3); cursor: pointer; }
+      .x-cartbar b { background: var(--x-caramel); color: #fff; border-radius: var(--r-pill); padding: 10px 16px; }
+      .x-has-bar .x-cartbar { display: flex; }
+      @media (min-width: 720px) { .x-has-bar .x-cartbar { display: none; } .x-has-bar .x-wa { bottom: 24px; } .x-wa { right: 24px; bottom: 24px; } }
+
+      /* overlays */
+      .x-scrim { position: fixed; inset: 0; z-index: 60; background: rgba(40, 24, 14, 0.45); opacity: 0; pointer-events: none; transition: opacity var(--dur-quick) var(--ease-out); }
+      .x-scrim.x-open { opacity: 1; pointer-events: auto; }
+      .x-drawer { position: fixed; z-index: 61; left: 0; right: 0; bottom: 0; max-height: 90vh; background: var(--x-cream); border-radius: var(--r-l) var(--r-l) 0 0; display: flex; flex-direction: column; transform: translateY(105%); transition: transform 280ms var(--ease-out); visibility: hidden; }
+      .x-drawer.x-open { transform: none; visibility: visible; }
+      @media (min-width: 720px) {
+        .x-drawer { left: auto; top: 0; width: 420px; max-height: none; border-radius: var(--r-l) 0 0 var(--r-l); transform: translateX(105%); }
+      }
+      .x-drawer__head, .x-modal__head { display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 10px 20px; border-bottom: 1px solid var(--x-line); }
+      .x-drawer__head h2, .x-modal__head h2 { font-size: 22px; font-weight: 600; }
+      .x-close { width: var(--tap); height: var(--tap); border: 0; border-radius: 50%; background: var(--x-sand); color: var(--x-choc); font-size: 22px; cursor: pointer; }
+      .x-drawer__body { overflow-y: auto; padding: 8px 20px; flex: 1; }
+      .x-drawer__foot { border-top: 1px solid var(--x-line); padding: 14px 20px 20px; display: grid; gap: 12px; background: var(--x-paper); }
+      .x-line { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--x-line); align-items: start; }
+      .x-line img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--r-s); }
+      .x-line__thumb { width: 64px; height: 64px; border-radius: var(--r-s); background: var(--x-sand); overflow: hidden; }
+      .x-line h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; }
+      .x-line p { margin: 2px 0 0; font: var(--type-small); color: var(--x-choc-2); }
+      .x-line__ctrl { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+      .x-line__price { font-weight: 600; white-space: nowrap; }
+      .x-remove { border: 0; background: none; color: var(--x-choc-2); text-decoration: underline; font: var(--type-small); min-height: var(--tap); padding: 0 8px; cursor: pointer; }
+      .x-empty { text-align: center; padding: 40px 10px; color: var(--x-choc-2); }
+      .x-empty p { margin: 0 0 16px; }
+      .x-seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: var(--x-sand); padding: 4px; border-radius: var(--r-m); border: 0; margin: 0; }
+      .x-seg label { position: relative; display: flex; flex-direction: column; justify-content: center; text-align: center; min-height: 52px; padding: 4px 8px; border-radius: var(--r-s); font: var(--type-small); font-weight: 600; cursor: pointer; line-height: 1.25; }
+      .x-seg label small { font-weight: 400; color: var(--x-choc-2); font-size: 12px; }
+      .x-seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+      .x-seg label:has(input:checked) { background: var(--x-paper); box-shadow: var(--x-shadow); }
+      .x-seg label:has(input:focus-visible) { outline: 2px solid var(--x-caramel); }
+      .x-sum { display: grid; gap: 6px; margin: 0; }
+      .x-sum div { display: flex; justify-content: space-between; font: var(--type-label); }
+      .x-sum dt { color: var(--x-choc-2); }
+      .x-sum dd { margin: 0; font-weight: 500; }
+      .x-sum .x-total { font-size: 18px; font-weight: 700; padding-top: 8px; border-top: 1px dashed var(--x-line); }
+      .x-sum .x-total dt, .x-sum .x-total dd { color: var(--x-choc); font: inherit; font-weight: 700; font-size: 18px; }
+
+      .x-modal { position: fixed; inset: 0; z-index: 62; display: flex; align-items: flex-end; justify-content: center; pointer-events: none; }
+      .x-modal__panel { pointer-events: auto; background: var(--x-cream); width: 100%; max-height: 94vh; border-radius: var(--r-l) var(--r-l) 0 0; display: flex; flex-direction: column; transform: translateY(105%); transition: transform 280ms var(--ease-out); visibility: hidden; }
+      .x-modal.x-open .x-modal__panel { transform: none; visibility: visible; }
+      @media (min-width: 720px) {
+        .x-modal { align-items: center; padding: 24px; }
+        .x-modal__panel { max-width: 560px; max-height: 90vh; border-radius: var(--r-l); transform: translateY(24px); opacity: 0; transition: transform 240ms var(--ease-out), opacity 240ms var(--ease-out); }
+        .x-modal.x-open .x-modal__panel { opacity: 1; }
+      }
+      .x-modal__body { overflow-y: auto; padding: 18px 20px 24px; display: grid; gap: 16px; }
+      .x-modal__body[hidden] { display: none; }
+      .x-two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .x-mini { background: var(--x-paper); border: 1px solid var(--x-line); border-radius: var(--r-m); padding: 12px 14px; }
+      .x-mini ul { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 6px; }
+      .x-mini li { display: flex; justify-content: space-between; gap: 10px; font: var(--type-small); }
+      .x-mini li span:last-child { font-weight: 600; white-space: nowrap; }
+      .x-pay { display: grid; gap: 8px; border: 0; margin: 0; padding: 0; }
+      .x-pay legend { font: var(--type-small); font-weight: 600; margin-bottom: 6px; padding: 0; }
+      .x-payopt { position: relative; display: flex; align-items: center; gap: 12px; padding: 14px; border: 1.5px solid var(--x-line); border-radius: var(--r-m); background: #fff; cursor: pointer; }
+      .x-payopt input { accent-color: var(--x-caramel); width: 20px; height: 20px; margin: 0; flex: none; }
+      .x-payopt:has(input:checked) { border-color: var(--x-choc); background: var(--x-paper); }
+      .x-payopt strong { display: block; font: var(--type-label); font-weight: 600; }
+      .x-payopt small { color: var(--x-choc-2); font: var(--type-small); }
+      .x-payopt .x-logos { margin-left: auto; display: flex; gap: 4px; }
+      .x-logos i { font-style: normal; font-size: 12px; font-weight: 700; border: 1px solid var(--x-line); border-radius: 4px; padding: 1px 4px; color: var(--x-choc-2); }
+
+      /* paystack-style demo */
+      .x-ps { background: #fff; border-radius: var(--r-m); border: 1px solid #e6e8ec; overflow: hidden; color: #011b33; }
+      .x-ps__top { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid #eef0f3; }
+      .x-ps__top .x-ps__brand { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
+      .x-ps__top .x-ps__amt { text-align: right; font-size: 12px; color: #5b6b7d; }
+      .x-ps__top .x-ps__amt b { display: block; font-size: 16px; color: #011b33; }
+      .x-ps__tabs { display: flex; border-bottom: 1px solid #eef0f3; }
+      .x-ps__tabs button { flex: 1; min-height: var(--tap); border: 0; background: none; font: var(--type-small); font-weight: 600; color: #5b6b7d; cursor: pointer; border-bottom: 2px solid transparent; }
+      .x-ps__tabs button[aria-selected="true"] { color: #011b33; border-bottom-color: #0ba4db; }
+      .x-ps__pane { padding: 16px; display: grid; gap: 12px; }
+      .x-ps__pane[hidden] { display: none; }
+      .x-ps .x-input { border-color: #dfe3e8; }
+      .x-ps__pay { background: #0ba4db; color: #fff; border: 0; min-height: 50px; border-radius: 8px; font: var(--type-body); font-weight: 600; cursor: pointer; width: 100%; }
+      .x-ps__pay:hover { background: #0993c4; }
+      .x-ps__note { text-align: center; font-size: 12px; color: #5b6b7d; margin: 0; padding: 0 16px 14px; }
+      .x-acct { background: #f4f7fa; border-radius: 8px; padding: 14px; display: grid; gap: 4px; font-size: 14px; }
+      .x-acct b { font-size: 20px; letter-spacing: 0.04em; }
+
+      .x-proc { text-align: center; padding: 48px 20px; display: grid; justify-items: center; gap: 14px; }
+      .x-spin { width: 44px; height: 44px; border-radius: 50%; border: 4px solid var(--x-sand); border-top-color: var(--x-caramel); animation: x-spin 0.8s linear infinite; }
+      @keyframes x-spin { to { transform: rotate(360deg); } }
+      .x-done { text-align: center; display: grid; justify-items: center; gap: 6px; padding-top: 8px; }
+      .x-done__tick { width: 64px; height: 64px; border-radius: 50%; background: #e3f3e8; color: #1f7a45; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+      .x-done h3 { font-size: 26px; font-weight: 600; }
+      .x-done p { margin: 0; color: var(--x-choc-2); }
+      .x-orderno { font-family: var(--x-serif); font-size: 20px; font-weight: 600; color: var(--x-caramel-dark); }
+      .x-facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font: var(--type-small); margin: 10px 0 0; }
+      .x-facts dt { color: var(--x-choc-2); }
+      .x-facts dd { margin: 0; text-align: right; font-weight: 500; }
+
+      .x-drawer__foot[hidden], .x-field[hidden] { display: none; }
+      .x-ps .x-field label { color: #011b33; }
+      .x-toast { position: fixed; left: 50%; top: 16px; z-index: 70; transform: translate(-50%, -140%); background: var(--x-choc); color: var(--x-cream); padding: 12px 18px; border-radius: var(--r-pill); font: var(--type-label); font-weight: 500; box-shadow: var(--x-shadow); transition: transform 240ms var(--ease-out); max-width: calc(100vw - 32px); }
+      .x-toast.x-show { transform: translate(-50%, 0); }
+      @media (prefers-reduced-motion: reduce) {
+        .x-drawer, .x-modal__panel, .x-toast, .x-scrim { transition: none; }
+        .x-spin { animation-duration: 2s; }
+      }
+    </style>
+  </head>
+  <body class="x-body">
+    <div class="page" id="top">
+      <div class="x-banner" id="banner" role="note">
+        <p>Demo preview: prices and payments are for demonstration only.</p>
+        <button type="button" id="banner-x" aria-label="Dismiss demo notice">×</button>
+      </div>
+
+      <header class="x-header">
+        <a class="x-logo" href="#top" aria-label="Tyna's Chops, home">
+          <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#a8571b"/><path d="M8 19c0-5 3.6-8.5 8-8.5s8 3.5 8 8.5v1.5H8z" fill="#fbf5ec"/><path d="M12 15.5c1-1.4 2.4-2.1 4-2.1s3 .7 4 2.1" fill="none" stroke="#a8571b" stroke-width="1.6" stroke-linecap="round"/><rect x="8" y="21.5" width="16" height="2.5" rx="1.25" fill="#fbf5ec"/></svg>
+          <span>Tyna's <em>Chops</em></span>
+        </a>
+        <nav class="x-menu" aria-label="Main">
+          <a href="#shop">Shop</a>
+                    <a href="#visit">Visit us</a>
+        </nav>
+        <button class="x-cartbtn" type="button" id="cart-open" aria-label="Open cart, 0 items">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span>Cart</span><span class="x-badge" id="cart-count">0</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="x-hero" aria-labelledby="hero-title">
+          <img src="tc-hero.png" alt="A party food tray of jollof rice, fried rice, peppered chicken, dodo and small chops" />
+          <div class="x-hero__copy">
+            <p class="x-eyebrow">Tyna's Chops · Gwarinpa, Abuja</p>
+            <h1 id="hero-title">Your plug for food trays &amp; small chops</h1>
+            <p class="x-hero__sub">Food trays, platters, cakes, small chops, soup bowls and snacks, made fresh to order. Delivery across Abuja, or pick up in Gwarinpa.</p>
+            <div class="x-hero__ctas">
+              <a class="x-btn x-btn--primary" href="#shop">Shop now</a>
+              <a class="x-btn x-btn--ghost" href="https://wa.me/2347036835867" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#128c4a" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+            <p class="x-hero__meta">Open Mon–Sat 8am–6pm · Sun 2pm–6pm</p>
+          </div>
+        </section>
+
+        <ul class="x-trust" aria-label="Why order from Tyna's">
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a8 8 0 0 1 16 0v3H4z"/><path d="M3 20h18"/><path d="M12 3v3"/></svg>Made fresh to order</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="14" height="10" rx="1"/><path d="M15 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Delivery across Abuja</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>Pay online or on delivery</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6L2.5 9.3l6.6-.8z"/></svg>Parties, events &amp; corporate orders</li>
+        </ul>
+
+        <section class="x-section" id="shop" aria-labelledby="shop-title">
+          <div class="x-section__head">
+            <p class="x-eyebrow">Order online</p>
+            <h2 id="shop-title">What are you ordering today?</h2>
+            <p>Pick your trays and treats, choose delivery or pickup, and we'll have it ready. Big orders need 24 hours' notice.</p>
+          </div>
+          <div class="x-filters" role="group" aria-label="Filter by category">
+            <button class="x-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="x-filter" type="button" data-filter="trays" aria-pressed="false">Food trays</button>
+            <button class="x-filter" type="button" data-filter="cakes" aria-pressed="false">Cakes</button>
+            <button class="x-filter" type="button" data-filter="smallchops" aria-pressed="false">Small chops</button>
+            <button class="x-filter" type="button" data-filter="soups" aria-pressed="false">Soups</button>
+            <button class="x-filter" type="button" data-filter="snacks" aria-pressed="false">Snacks</button>
+          </div>
+
+          <div class="x-grid" id="products">
+            <article class="x-card" data-id="tray" data-name="Food Tray" data-cat="trays">
+              <div class="x-card__media"><img src="tc-hero.png" alt="A party food tray of jollof rice, fried rice, peppered chicken, dodo and small chops" /><span class="x-card__tag">Food trays</span></div>
+              <div class="x-card__body">
+                <div class="x-card__top"><h3>Party Food Tray</h3><span class="x-price">₦35,000</span></div>
+                <p class="x-card__desc">Jollof and fried rice, peppered chicken, dodo, coleslaw, moi moi and small chops.</p>
+                <fieldset class="x-opts"><legend>Size</legend>
+                  <label class="x-opt"><input type="radio" name="o-tray" value="Small (serves 3–4)" data-price="35000" checked /><span>Small, serves 3–4<small>₦35,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-tray" value="Medium (serves 6–8)" data-price="55000" /><span>Medium, serves 6–8<small>₦55,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-tray" value="Large (serves 10–12)" data-price="80000" /><span>Large, serves 10–12<small>₦80,000</small></span></label>
+                </fieldset>
+                <div class="x-buy">
+                  <div class="x-step" data-step><button type="button" data-d="-1" aria-label="Decrease quantity">−</button><output aria-live="polite">1</output><button type="button" data-d="1" aria-label="Increase quantity">+</button></div>
+                  <button class="x-btn x-btn--primary" type="button" data-add>Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="x-card" data-id="platter" data-name="Food Platter" data-cat="trays">
+              <div class="x-card__media"><img src="tc-platter.png" alt="A food box with jollof rice, chicken, gizzard, dodo and small chops" /><span class="x-card__tag">Platters</span></div>
+              <div class="x-card__body">
+                <div class="x-card__top"><h3>Food Platter</h3><span class="x-price">₦18,000</span></div>
+                <p class="x-card__desc">Our popular platter, packed for gifting or sharing. Serves 2 to 10.</p>
+                <fieldset class="x-opts"><legend>Platter</legend>
+                  <label class="x-opt"><input type="radio" name="o-platter" value="Platter" data-price="18000" checked /><span>Platter<small>₦18,000</small></span></label>
+                </fieldset>
+                <div class="x-buy">
+                  <div class="x-step" data-step><button type="button" data-d="-1" aria-label="Decrease quantity">−</button><output aria-live="polite">1</output><button type="button" data-d="1" aria-label="Increase quantity">+</button></div>
+                  <button class="x-btn x-btn--primary" type="button" data-add>Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="x-card" data-id="cake" data-name="Cake" data-cat="cakes">
+              <div class="x-card__media"><img src="tc-cake.png" alt="A decorated celebration cake" /><span class="x-card__tag">Cakes</span></div>
+              <div class="x-card__body">
+                <div class="x-card__top"><h3>Cakes &amp; Combos</h3><span class="x-price">₦18,000</span></div>
+                <p class="x-card__desc">Celebration cakes, or our cake and small chops combo for parties.</p>
+                <fieldset class="x-opts"><legend>Choose</legend>
+                  <label class="x-opt"><input type="radio" name="o-cake" value="6-inch cake" data-price="18000" checked /><span>6-inch cake<small>₦18,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-cake" value="8-inch cake" data-price="25000" /><span>8-inch cake<small>₦25,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-cake" value="Cake + small chops combo" data-price="92000" /><span>Cake + small chops combo<small>₦92,000</small></span></label>
+                </fieldset>
+                <div class="x-field">
+                  <label for="msg-cake">Message on cake <small>(optional)</small></label>
+                  <input class="x-input" id="msg-cake" data-msg type="text" maxlength="40" placeholder="e.g. Happy 30th, Amaka!" />
+                </div>
+                <div class="x-buy">
+                  <div class="x-step" data-step><button type="button" data-d="-1" aria-label="Decrease quantity">−</button><output aria-live="polite">1</output><button type="button" data-d="1" aria-label="Increase quantity">+</button></div>
+                  <button class="x-btn x-btn--primary" type="button" data-add>Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="x-card" data-id="chops" data-name="Small Chops" data-cat="smallchops">
+              <div class="x-card__media"><img src="tc-smallchops.png" alt="A tray of puff-puff, spring rolls, samosa and peppered meat" /><span class="x-card__tag">Small chops</span></div>
+              <div class="x-card__body">
+                <div class="x-card__top"><h3>Small Chops</h3><span class="x-price">₦3,500</span></div>
+                <p class="x-card__desc">Puff-puff, spring rolls, samosa and peppered meat.</p>
+                <fieldset class="x-opts"><legend>Size</legend>
+                  <label class="x-opt"><input type="radio" name="o-chops" value="Mini pack" data-price="3500" checked /><span>Mini pack<small>₦3,500</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-chops" value="Party tray (serves 10)" data-price="25000" /><span>Party tray, serves 10<small>₦25,000</small></span></label>
+                </fieldset>
+                <div class="x-buy">
+                  <div class="x-step" data-step><button type="button" data-d="-1" aria-label="Decrease quantity">−</button><output aria-live="polite">1</output><button type="button" data-d="1" aria-label="Increase quantity">+</button></div>
+                  <button class="x-btn x-btn--primary" type="button" data-add>Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="x-card" data-id="soup" data-name="Soup Bowl" data-cat="soups">
+              <div class="x-card__media"><img src="tc-soups.png" alt="Bowls of egusi soup, okra soup and stew" /><span class="x-card__tag">Soup bowls</span></div>
+              <div class="x-card__body">
+                <div class="x-card__top"><h3>Soup &amp; Stew Bowls</h3><span class="x-price">₦15,000</span></div>
+                <p class="x-card__desc">Rich egusi, okra or stew with assorted meat, packed in tubs.</p>
+                <fieldset class="x-opts"><legend>Size</legend>
+                  <label class="x-opt"><input type="radio" name="o-soup" value="1 litre" data-price="15000" checked /><span>1 litre<small>₦15,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-soup" value="2 litres" data-price="25000" /><span>2 litres<small>₦25,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-soup" value="4 litres" data-price="45000" /><span>4 litres<small>₦45,000</small></span></label>
+                </fieldset>
+                <div class="x-buy">
+                  <div class="x-step" data-step><button type="button" data-d="-1" aria-label="Decrease quantity">−</button><output aria-live="polite">1</output><button type="button" data-d="1" aria-label="Increase quantity">+</button></div>
+                  <button class="x-btn x-btn--primary" type="button" data-add>Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="x-card" data-id="snacks" data-name="Snack" data-cat="snacks">
+              <div class="x-card__media"><img src="tc-snacks.png" alt="Golden meat pies and sausage rolls" /><span class="x-card__tag">Snacks</span></div>
+              <div class="x-card__body">
+                <div class="x-card__top"><h3>Meat Pies &amp; Rolls</h3><span class="x-price">₦800</span></div>
+                <p class="x-card__desc">Fresh, flaky snacks baked daily.</p>
+                <fieldset class="x-opts"><legend>Snack</legend>
+                  <label class="x-opt"><input type="radio" name="o-snacks" value="Sausage roll" data-price="800" checked /><span>Sausage roll<small>₦800</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-snacks" value="Meat pie" data-price="1000" /><span>Meat pie<small>₦1,000</small></span></label>
+                  <label class="x-opt"><input type="radio" name="o-snacks" value="Chicken pie" data-price="1200" /><span>Chicken pie<small>₦1,200</small></span></label>
+                </fieldset>
+                <div class="x-buy">
+                  <div class="x-step" data-step><button type="button" data-d="-1" aria-label="Decrease quantity">−</button><output aria-live="polite">1</output><button type="button" data-d="1" aria-label="Increase quantity">+</button></div>
+                  <button class="x-btn x-btn--primary" type="button" data-add>Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+
+        <section class="x-section" id="visit" aria-labelledby="visit-title">
+          <div class="x-section__head">
+            <p class="x-eyebrow">Visit us</p>
+            <h2 id="visit-title">Find us in Gwarinpa</h2>
+            <p>Pick up your order or drop in. We deliver across Abuja.</p>
+          </div>
+          <div class="x-visit">
+            <div class="x-info">
+              <dl>
+                <div class="x-row">
+                  <span class="x-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                  <dt>Address</dt>
+                  <dd>Plot 457, Margaret Ekpo (N Close), First Avenue, Gwarinpa, Abuja</dd>
+                </div>
+                <div class="x-row">
+                  <span class="x-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                  <dt>Hours</dt>
+                  <dd class="x-hours"><span>Mon–Sat</span><span>8am–6pm</span><span>Sunday</span><span>2pm–6pm</span></dd>
+                </div>
+                <div class="x-row">
+                  <span class="x-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span>
+                  <dt>Phone &amp; WhatsApp</dt>
+                  <dd><a class="link" href="tel:+2347036835867">0703 683 5867</a> · <a class="link" href="https://wa.me/2347036835867" target="_blank" rel="noopener">Chat</a></dd>
+                </div>
+              </dl>
+            </div>
+            <a class="x-map" href="https://www.google.com/maps/search/?api=1&amp;query=Plot%20457%20Margaret%20Ekpo%20Street%20First%20Avenue%20Gwarinpa%20Abuja" target="_blank" rel="noopener" aria-label="Open Tyna's Chops in Google Maps">
+              <svg class="x-map__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="400" height="300" fill="#efe3cf"/>
+                <path d="M-10 210 L410 150" stroke="#fffdf9" stroke-width="22"/>
+                <path d="M120 -10 L170 310" stroke="#fffdf9" stroke-width="14"/>
+                <path d="M290 -10 L250 310" stroke="#fffdf9" stroke-width="10"/>
+                <path d="M-10 80 L410 60" stroke="#fffdf9" stroke-width="8"/>
+                <rect x="30" y="100" width="70" height="60" rx="8" fill="#e4d3b8"/>
+                <rect x="190" y="80" width="40" height="50" rx="8" fill="#e4d3b8"/>
+                <rect x="310" y="90" width="70" height="40" rx="8" fill="#dcebd2"/>
+                <rect x="190" y="210" width="45" height="60" rx="8" fill="#e4d3b8"/>
+                <g transform="translate(200 120)"><path d="M0 0c-14 0-24 10-24 23 0 17 24 37 24 37s24-20 24-37C24 10 14 0 0 0z" fill="#a8571b"/><circle cx="0" cy="23" r="9" fill="#fbf5ec"/></g>
+              </svg>
+              <span class="x-map__card"><span><strong>Tyna's Chops</strong><span>First Avenue, Gwarinpa</span></span><span class="x-map__go">Get directions</span></span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="x-foot">
+        <p>© Tyna's Chops · Cakes, small chops, food trays, soup bowls and snacks.</p>
+        <p>Demo site by Sajjad · <a href="https://sajjadblog.vercel.app" target="_blank" rel="noopener">sajjadblog.vercel.app</a></p>
+      </footer>
+
+      <a class="x-wa" href="https://wa.me/2347036835867" target="_blank" rel="noopener" aria-label="Chat with Tyna's Chops on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+      </a>
+      <button class="x-cartbar" type="button" id="cartbar"><span id="cartbar-label">View cart</span><b id="cartbar-total">₦0</b></button>
+
+      <div class="x-toast" id="toast" role="status" aria-live="polite"></div>
+      <div class="x-scrim" id="scrim"></div>
+
+      <aside class="x-drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+        <div class="x-drawer__head"><h2 id="drawer-title">Your cart</h2><button class="x-close" type="button" data-close aria-label="Close cart">×</button></div>
+        <div class="x-drawer__body" id="cart-lines"></div>
+        <div class="x-drawer__foot" id="cart-foot">
+          <fieldset class="x-seg"><legend class="x-sr">Delivery or pickup</legend>
+            <label><input type="radio" name="ful-cart" value="pickup" checked />Pickup in Gwarinpa<small>Free</small></label>
+            <label><input type="radio" name="ful-cart" value="delivery" />Delivery within Abuja<small>₦2,000</small></label>
+          </fieldset>
+          <dl class="x-sum" data-sum></dl>
+          <button class="x-btn x-btn--primary x-btn--block" type="button" id="to-checkout">Checkout</button>
+        </div>
+      </aside>
+
+      <div class="x-modal" id="checkout" role="dialog" aria-modal="true" aria-labelledby="co-title">
+        <div class="x-modal__panel">
+          <div class="x-modal__head"><h2 id="co-title">Checkout</h2><button class="x-close" type="button" data-close aria-label="Close checkout">×</button></div>
+          <form class="x-modal__body" id="co-form" novalidate>
+            <div class="x-mini"><ul id="co-items"></ul><dl class="x-sum" data-sum></dl></div>
+            <div class="x-field"><label for="co-name">Full name</label><input class="x-input" id="co-name" autocomplete="name" required /></div>
+            <div class="x-field"><label for="co-phone">Phone number</label><input class="x-input" id="co-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="080..." required /></div>
+            <fieldset class="x-seg"><legend class="x-sr">Delivery or pickup</legend>
+              <label><input type="radio" name="ful-co" value="pickup" checked />Pickup in Gwarinpa<small>Free</small></label>
+              <label><input type="radio" name="ful-co" value="delivery" />Delivery within Abuja<small>₦2,000</small></label>
+            </fieldset>
+            <div class="x-field" id="co-addr-wrap" hidden><label for="co-addr">Delivery address</label><textarea class="x-input" id="co-addr" autocomplete="street-address" placeholder="House number, street, area"></textarea></div>
+            <div class="x-two">
+              <div class="x-field"><label for="co-date">Date needed</label><input class="x-input" id="co-date" type="date" required /></div>
+              <div class="x-field"><label for="co-time">Time</label><input class="x-input" id="co-time" type="time" required /></div>
+            </div>
+            <div class="x-field"><label for="co-notes">Notes <small>(optional)</small></label><textarea class="x-input" id="co-notes" placeholder="Cake colour, theme, landmark..."></textarea></div>
+            <fieldset class="x-pay"><legend>Payment method</legend>
+              <label class="x-payopt"><input type="radio" name="pay" value="online" checked /><span><strong>Pay with card / bank transfer</strong><small>Secured by Paystack (demo)</small></span><span class="x-logos"><i>VISA</i><i>MC</i><i>Verve</i></span></label>
+              <label class="x-payopt"><input type="radio" name="pay" value="cod" /><span><strong>Pay on delivery</strong><small>Cash or transfer when you receive it</small></span></label>
+            </fieldset>
+            <p class="x-err" id="co-err" role="alert" hidden></p>
+            <button class="x-btn x-btn--primary x-btn--block" type="submit" id="co-submit">Continue to payment</button>
+          </form>
+
+          <div class="x-modal__body" id="co-pay" hidden>
+            <div class="x-ps">
+              <div class="x-ps__top">
+                <span class="x-ps__brand"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect y="2" width="20" height="3" rx="1.5" fill="#0ba4db"/><rect y="8.5" width="20" height="3" rx="1.5" fill="#011b33"/><rect y="15" width="13" height="3" rx="1.5" fill="#011b33"/></svg>paystack <small style="font-weight:400;color:#5b6b7d">demo</small></span>
+                <span class="x-ps__amt">Tyna's Chops<b id="ps-amt">₦0</b></span>
+              </div>
+              <div class="x-ps__tabs" role="tablist">
+                <button type="button" role="tab" aria-selected="true" data-tab="card">Card</button>
+                <button type="button" role="tab" aria-selected="false" data-tab="transfer">Bank transfer</button>
+              </div>
+              <div class="x-ps__pane" data-pane="card">
+                <div class="x-field"><label for="ps-card" style="color:#011b33">Card number</label><input class="x-input" id="ps-card" inputmode="numeric" value="4084 0840 8408 4081" /></div>
+                <div class="x-two">
+                  <div class="x-field"><label for="ps-exp" style="color:#011b33">Expiry</label><input class="x-input" id="ps-exp" value="12 / 29" /></div>
+                  <div class="x-field"><label for="ps-cvv" style="color:#011b33">CVV</label><input class="x-input" id="ps-cvv" inputmode="numeric" value="408" /></div>
+                </div>
+                <button class="x-ps__pay" type="button" data-pay>Pay ₦0</button>
+              </div>
+              <div class="x-ps__pane" data-pane="transfer" hidden>
+                <div class="x-acct"><span>Transfer exactly <strong data-amt>₦0</strong> to</span><b>0123 456 789</b><span>Demo Bank · Tyna's Chops (demo)</span></div>
+                <button class="x-ps__pay" type="button" data-pay>I've sent the money</button>
+              </div>
+              <p class="x-ps__note">Demo only. No card is charged and no money moves.</p>
+            </div>
+            <button class="x-btn x-btn--ghost x-btn--block" type="button" id="ps-back">Back to details</button>
+          </div>
+
+          <div class="x-modal__body x-proc" id="co-proc" hidden>
+            <div class="x-spin" aria-hidden="true"></div>
+            <p id="proc-text"><strong>Processing payment…</strong></p>
+          </div>
+
+          <div class="x-modal__body" id="co-done" hidden>
+            <div class="x-done">
+              <div class="x-done__tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+              <h3>Order confirmed</h3>
+              <p>Order number</p>
+              <p class="x-orderno" id="done-no">GB-00000</p>
+              <p>Send it to Tyna's Chops on WhatsApp so the team can confirm.</p>
+            </div>
+            <div class="x-mini"><ul id="done-items"></ul><dl class="x-sum" id="done-sum"></dl><dl class="x-facts" id="done-facts"></dl></div>
+            <a class="x-btn x-btn--wa x-btn--block" id="done-wa" href="https://wa.me/2347036835867" target="_blank" rel="noopener">Send order to Tyna's Chops on WhatsApp</a>
+            <button class="x-btn x-btn--ghost x-btn--block" type="button" data-close>Continue shopping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var WA = "2347036835867";
+        var DELIVERY_FEE = 2000;
+        var cart = [];
+        var fulfil = "pickup";
+        var lastOrder = null;
+        var $ = function (s, r) { return (r || document).querySelector(s); };
+        var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+        var naira = function (n) { return "₦" + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ","); };
+        var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+        var body = document.body;
+
+        /* banner */
+        $("#banner-x").addEventListener("click", function () { $("#banner").remove(); });
+
+        /* toast */
+        var toastT;
+        function toast(msg) {
+          var t = $("#toast"); t.textContent = msg; t.classList.add("x-show");
+          clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove("x-show"); }, 2200);
+        }
+
+        /* filters */
+        $$(".x-filter").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var f = b.dataset.filter;
+            $$(".x-filter").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+            $$(".x-card").forEach(function (c) { c.hidden = !(f === "all" || c.dataset.cat === f); });
+          });
+        });
+
+        /* product cards */
+        function itemFor(card, input) {
+          var id = card.dataset.id, v = input.value, name = card.dataset.name, opt = v;
+          if (id === "rolls") { name = v; opt = ""; }
+          if (id === "drinks") { var m = v.match(/^(.*) (\d+cl)$/); name = m[1]; opt = m[2]; }
+          return { name: name, opt: opt };
+        }
+        $$(".x-card").forEach(function (card) {
+          var out = $("[data-step] output", card), qty = 1;
+          function checked() { return $('input[type="radio"]:checked', card); }
+          function refresh() { $(".x-price", card).textContent = naira(+checked().dataset.price); }
+          $$('input[type="radio"]', card).forEach(function (r) { r.addEventListener("change", refresh); });
+          $$("[data-step] button", card).forEach(function (b) {
+            b.addEventListener("click", function () { qty = Math.min(99, Math.max(1, qty + +b.dataset.d)); out.textContent = qty; });
+          });
+          $("[data-add]", card).addEventListener("click", function () {
+            var input = checked(), it = itemFor(card, input);
+            var msgEl = $("[data-msg]", card), msg = msgEl ? msgEl.value.trim() : "";
+            var key = card.dataset.id + "|" + input.value + "|" + msg;
+            var line = cart.find(function (l) { return l.key === key; });
+            if (line) line.qty = Math.min(99, line.qty + qty);
+            else cart.push({ key: key, name: it.name, opt: it.opt, msg: msg, price: +input.dataset.price, qty: qty, img: $(".x-card__media img", card) });
+            toast("Added " + qty + " × " + it.name + (it.opt ? " (" + it.opt + ")" : ""));
+            qty = 1; out.textContent = 1; if (msgEl) msgEl.value = "";
+            var badge = $("#cart-count"); badge.classList.add("x-bump"); setTimeout(function () { badge.classList.remove("x-bump"); }, 200);
+            render();
+          });
+        });
+
+        /* totals */
+        function totals() {
+          var sub = cart.reduce(function (s, l) { return s + l.price * l.qty; }, 0);
+          var fee = cart.length && fulfil === "delivery" ? DELIVERY_FEE : 0;
+          return { sub: sub, fee: fee, total: sub + fee, count: cart.reduce(function (s, l) { return s + l.qty; }, 0) };
+        }
+        function sumHTML(t) {
+          return '<div><dt>Subtotal</dt><dd>' + naira(t.sub) + '</dd></div>' +
+            '<div><dt>' + (fulfil === "delivery" ? "Delivery within Abuja" : "Pickup in Gwarinpa") + '</dt><dd>' + (t.fee ? naira(t.fee) : "Free") + '</dd></div>' +
+            '<div class="x-total"><dt>Total</dt><dd>' + naira(t.total) + '</dd></div>';
+        }
+        function lineLabel(l) { return l.name + (l.opt ? " (" + l.opt + ")" : ""); }
+
+        function render() {
+          var t = totals();
+          $("#cart-count").textContent = t.count;
+          $("#cart-open").setAttribute("aria-label", "Open cart, " + t.count + " item" + (t.count === 1 ? "" : "s"));
+          $("#cartbar-label").textContent = "View cart · " + t.count + " item" + (t.count === 1 ? "" : "s");
+          $("#cartbar-total").textContent = naira(t.total);
+          body.classList.toggle("x-has-bar", t.count > 0);
+          var box = $("#cart-lines");
+          if (!cart.length) {
+            box.innerHTML = '<div class="x-empty"><p>Your cart is empty.</p><button class="x-btn x-btn--ghost" type="button" data-browse>Browse the shop</button></div>';
+          } else {
+            box.innerHTML = cart.map(function (l, i) {
+              return '<div class="x-line"><div class="x-line__thumb" data-thumb="' + i + '"></div><div><h3>' + esc(l.name) + '</h3>' +
+                (l.opt ? '<p>' + esc(l.opt) + ' · ' + naira(l.price) + ' each</p>' : '<p>' + naira(l.price) + ' each</p>') +
+                (l.msg ? '<p>Message: “' + esc(l.msg) + '”</p>' : '') +
+                '<div class="x-line__ctrl"><div class="x-step x-step--sm"><button type="button" data-q="' + i + '" data-d="-1" aria-label="Decrease ' + esc(l.name) + '">−</button><output>' + l.qty + '</output><button type="button" data-q="' + i + '" data-d="1" aria-label="Increase ' + esc(l.name) + '">+</button></div>' +
+                '<button class="x-remove" type="button" data-rm="' + i + '">Remove</button></div></div>' +
+                '<span class="x-line__price">' + naira(l.price * l.qty) + '</span></div>';
+            }).join("");
+            /* thumbnails: clone the card's own img element so no new image source is created */
+            $$("[data-thumb]", box).forEach(function (el) { el.appendChild(cart[+el.dataset.thumb].img.cloneNode()); });
+          }
+          $("#cart-foot").hidden = !cart.length;
+          $$("[data-sum]").forEach(function (d) { d.innerHTML = sumHTML(t); });
+          $("#co-items").innerHTML = cart.map(function (l) { return '<li><span>' + l.qty + ' × ' + esc(lineLabel(l)) + '</span><span>' + naira(l.price * l.qty) + '</span></li>'; }).join("");
+          $("#ps-amt").textContent = naira(t.total);
+          $$("[data-amt]").forEach(function (e) { e.textContent = naira(t.total); });
+          $$("[data-pay]")[0].textContent = "Pay " + naira(t.total);
+          $("#to-checkout").disabled = !cart.length;
+        }
+
+        $("#cart-lines").addEventListener("click", function (e) {
+          var q = e.target.closest("[data-q]"), rm = e.target.closest("[data-rm]");
+          if (e.target.closest("[data-browse]")) { closeAll(); location.hash = "#shop"; return; }
+          if (q) {
+            var l = cart[+q.dataset.q]; l.qty += +q.dataset.d;
+            if (l.qty < 1) cart.splice(+q.dataset.q, 1); else if (l.qty > 99) l.qty = 99;
+            render();
+          }
+          if (rm) { cart.splice(+rm.dataset.rm, 1); render(); }
+        });
+
+        /* delivery / pickup, kept in sync */
+        function setFulfil(v) {
+          fulfil = v;
+          $$('input[name="ful-cart"], input[name="ful-co"]').forEach(function (r) { r.checked = r.value === v; });
+          $("#co-addr-wrap").hidden = v !== "delivery";
+          render();
+        }
+        $$('input[name="ful-cart"], input[name="ful-co"]').forEach(function (r) { r.addEventListener("change", function () { setFulfil(r.value); }); });
+
+        /* overlays */
+        var lastFocus = null;
+        function lock(on) { body.classList.toggle("x-lock", on); $("#scrim").classList.toggle("x-open", on); }
+        function openDrawer() { lastFocus = document.activeElement; $("#checkout").classList.remove("x-open"); $("#drawer").classList.add("x-open"); lock(true); setTimeout(function () { $("#drawer .x-close").focus(); }, 50); }
+        function openCheckout() {
+          if (!cart.length) return;
+          $("#drawer").classList.remove("x-open");
+          showView("co-form"); $("#co-err").hidden = true;
+          $("#checkout").classList.add("x-open"); lock(true);
+          setTimeout(function () { $("#co-name").focus(); }, 300);
+        }
+        function closeAll() {
+          if (!$("#co-proc").hidden) return;
+          $("#drawer").classList.remove("x-open"); $("#checkout").classList.remove("x-open"); lock(false);
+          if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+        $("#cart-open").addEventListener("click", openDrawer);
+        $("#cartbar").addEventListener("click", openDrawer);
+        $("#to-checkout").addEventListener("click", openCheckout);
+        $("#scrim").addEventListener("click", closeAll);
+        $$("[data-close]").forEach(function (b) { b.addEventListener("click", closeAll); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
+
+        function showView(id) {
+          ["co-form", "co-pay", "co-proc", "co-done"].forEach(function (v) { $("#" + v).hidden = v !== id; });
+          $("#co-title").textContent = { "co-form": "Checkout", "co-pay": "Payment", "co-proc": "Processing", "co-done": "Thank you!" }[id];
+          var p = $("#" + id); if (p) p.scrollTop = 0;
+        }
+
+        /* checkout form */
+        var dateEl = $("#co-date");
+        var d = new Date(), today = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+        dateEl.min = today;
+        function payMethod() { return $('input[name="pay"]:checked').value; }
+        $$('input[name="pay"]').forEach(function (r) {
+          r.addEventListener("change", function () { $("#co-submit").textContent = payMethod() === "online" ? "Continue to payment" : "Place order"; });
+        });
+        $("#co-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          var need = [["#co-name", "your name"], ["#co-phone", "a phone number"]];
+          if (fulfil === "delivery") need.push(["#co-addr", "a delivery address"]);
+          need.push(["#co-date", "the date needed"], ["#co-time", "a time"]);
+          var missing = [];
+          need.forEach(function (n) { var el = $(n[0]), bad = !el.value.trim(); el.classList.toggle("x-invalid", bad); el.setAttribute("aria-invalid", bad); if (bad) missing.push(n); });
+          var phone = $("#co-phone"), digits = phone.value.replace(/\D/g, "");
+          if (phone.value.trim() && digits.length < 10) { phone.classList.add("x-invalid"); missing.push(["#co-phone", "a valid phone number"]); }
+          if (dateEl.value && dateEl.value < today) { dateEl.classList.add("x-invalid"); missing.push(["#co-date", "a date from today on"]); }
+          var err = $("#co-err");
+          if (missing.length) {
+            err.textContent = "Please add " + missing.map(function (m) { return m[1]; }).join(", ") + ".";
+            err.hidden = false; $(missing[0][0]).focus(); return;
+          }
+          err.hidden = true;
+          if (payMethod() === "online") { showView("co-pay"); }
+          else process("Placing your order…");
+        });
+        $$("#co-form .x-input").forEach(function (el) { el.addEventListener("input", function () { el.classList.remove("x-invalid"); el.removeAttribute("aria-invalid"); }); });
+
+        /* paystack demo */
+        $$(".x-ps__tabs button").forEach(function (b) {
+          b.addEventListener("click", function () {
+            $$(".x-ps__tabs button").forEach(function (o) { o.setAttribute("aria-selected", o === b ? "true" : "false"); });
+            $$(".x-ps__pane").forEach(function (p) { p.hidden = p.dataset.pane !== b.dataset.tab; });
+          });
+        });
+        $("#ps-back").addEventListener("click", function () { showView("co-form"); });
+        $$("[data-pay]").forEach(function (b) { b.addEventListener("click", function () { process("Processing payment…"); }); });
+
+        function process(text) {
+          $("#proc-text").innerHTML = "<strong>" + text + "</strong>";
+          showView("co-proc");
+          setTimeout(confirmOrder, 1800);
+        }
+
+        function niceDate(v) {
+          var dt = new Date(v + "T00:00");
+          return isNaN(dt) ? v : dt.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+        }
+        function niceTime(v) {
+          var p = v.split(":"), h = +p[0], m = p[1];
+          return (h % 12 || 12) + ":" + m + (h < 12 ? "am" : "pm");
+        }
+
+        function confirmOrder() {
+          var t = totals();
+          var o = {
+            no: "GB-" + Math.floor(10000 + Math.random() * 90000),
+            lines: cart.map(function (l) { return { label: lineLabel(l), msg: l.msg, qty: l.qty, amt: l.price * l.qty }; }),
+            t: t, fulfil: fulfil,
+            name: $("#co-name").value.trim(), phone: $("#co-phone").value.trim(),
+            addr: $("#co-addr").value.trim(),
+            when: niceDate(dateEl.value) + ", " + niceTime($("#co-time").value),
+            notes: $("#co-notes").value.trim(),
+            pay: payMethod() === "online" ? "Paid online (card / transfer, demo)" : "Pay on delivery"
+          };
+          lastOrder = o;
+          $("#done-no").textContent = o.no;
+          $("#done-items").innerHTML = o.lines.map(function (l) { return '<li><span>' + l.qty + ' × ' + esc(l.label) + (l.msg ? '<br><small>Message: “' + esc(l.msg) + '”</small>' : '') + '</span><span>' + naira(l.amt) + '</span></li>'; }).join("");
+          $("#done-sum").innerHTML = sumHTML(t);
+          var facts = [["Name", o.name], ["Phone", o.phone], [o.fulfil === "delivery" ? "Deliver to" : "Pickup", o.fulfil === "delivery" ? o.addr : "Plot 457, First Avenue, Gwarinpa"], ["Needed", o.when], ["Payment", o.pay]];
+          if (o.notes) facts.push(["Notes", o.notes]);
+          $("#done-facts").innerHTML = facts.map(function (f) { return "<dt>" + f[0] + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("");
+
+          var msg = ["Hi Tyna's Chops, I just placed order " + o.no + " on your website.", "", "Items:"];
+          o.lines.forEach(function (l) { msg.push("- " + l.qty + " x " + l.label + ": " + naira(l.amt)); if (l.msg) msg.push("  Message on cake: " + l.msg); });
+          msg.push("", "Subtotal: " + naira(t.sub), (o.fulfil === "delivery" ? "Delivery within Abuja: " + naira(t.fee) : "Pickup in Gwarinpa: Free"), "Total: " + naira(t.total), "Payment: " + o.pay, "");
+          msg.push("Name: " + o.name, "Phone: " + o.phone);
+          msg.push(o.fulfil === "delivery" ? "Delivery to: " + o.addr : "Pickup in Gwarinpa");
+          msg.push("Date needed: " + o.when);
+          if (o.notes) msg.push("Notes: " + o.notes);
+          $("#done-wa").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg.join("\n"));
+
+          cart = [];
+          $("#co-form").reset(); setFulfil(o.fulfil);
+          $("#co-submit").textContent = "Continue to payment";
+          showView("co-done");
+          render();
+        }
+
+        render();
+      })();
+    </script>
+  </body>
+</html>
