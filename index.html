@@ -325,6 +325,79 @@
       .x-events li b { color: var(--x-caramel-soft); white-space: nowrap; }
       .x-events .x-btn { background: #fff; color: var(--x-choc); justify-self: start; }
       @media (min-width: 880px) { .x-events { grid-template-columns: 1fr 1fr; align-items: center; padding: 48px; } }
+
+      /* party tray planner (inside events) */
+      .x-planner { grid-column: 1 / -1; background: rgba(255,255,255,0.12); border-radius: 20px; padding: 18px; display: grid; gap: 14px; }
+      .x-planner h3, .x-body .x-planner h3 { color: #fff; font-size: 22px; text-transform: uppercase; }
+      .x-planner > p { margin: 0; }
+      .x-planner .x-filters { margin: 0; padding: 2px 0 4px; flex-wrap: wrap; overflow: visible; }
+      .x-planner .x-filter { background: rgba(255,255,255,0.95); border-color: transparent; color: var(--x-choc); min-width: 56px; }
+      .x-planner .x-filter[aria-pressed="true"] { background: var(--x-choc); border-color: var(--x-choc); color: var(--x-cream); }
+      .x-planner__own { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+      .x-planner__own label { font: var(--type-small); font-weight: 600; }
+      .x-planner__own .x-input { width: 110px; min-height: 44px; }
+      .x-planner__total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; font-family: var(--x-serif); font-weight: 800; font-size: 24px; border-top: 1px dashed rgba(255,255,255,0.4); padding-top: 12px; }
+      .x-planner__total small { font-family: var(--sans); font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); }
+      .x-planner__note { font: var(--type-small); color: rgba(255,255,255,0.85); }
+      .x-events .x-planner p { margin: 0; }
+      @media (min-width: 880px) { .x-planner { grid-template-columns: 1fr 1fr; column-gap: 28px; padding: 24px; } .x-planner__left { align-self: start; display: grid; gap: 14px; } }
+
+      /* my orders + owner views */
+      .x-view { padding-top: 32px; }
+      .x-view[hidden], main[hidden], .x-login[hidden], #admin-dash[hidden] { display: none; }
+      .x-panel { background: var(--x-paper); border: 2px solid var(--x-line); border-radius: 22px; padding: 18px; box-shadow: var(--x-shadow); }
+      .x-panel h3 { font-size: 20px; }
+      .x-stack { display: grid; gap: 16px; }
+      .x-find { display: grid; gap: 12px; }
+      @media (min-width: 720px) { .x-find__row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; } .x-find__row .x-btn { min-width: 150px; } }
+      .x-find__row { display: grid; gap: 12px; }
+      .x-subhead { font-family: var(--x-serif); font-weight: 800; font-size: 20px; margin: 28px 0 12px; }
+      .x-ocard { display: grid; gap: 14px; }
+      .x-ocard__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px 12px; flex-wrap: wrap; }
+      .x-ocard__top small { display: block; color: var(--x-choc-2); font: var(--type-small); margin-top: 2px; }
+      .x-code { font-family: var(--x-serif); font-weight: 800; font-size: 19px; letter-spacing: 0.02em; color: var(--x-caramel-dark); word-break: break-all; }
+      .x-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+      .x-tag { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font: var(--type-tag); font-weight: 600; background: var(--x-sand); color: var(--x-choc); white-space: nowrap; }
+      .x-tag--paid { background: #e3f3e8; color: #1f7a45; }
+      .x-tag--unpaid { background: var(--x-caramel-soft); color: var(--x-choc); }
+      .x-tag--done { background: var(--x-choc); color: var(--x-cream); }
+      .x-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+      .x-track li { font-size: 12px; line-height: 1.25; color: var(--x-choc-2); font-weight: 500; }
+      .x-track li::before { content: ""; display: block; height: 6px; border-radius: 999px; background: var(--x-line); margin-bottom: 8px; }
+      .x-track li.x-on::before { background: var(--x-caramel); }
+      .x-track li.x-now { color: var(--x-choc); font-weight: 700; }
+      .x-olines { list-style: none; margin: 0; padding: 12px 0 0; border-top: 1px solid var(--x-line); display: grid; gap: 6px; }
+      .x-olines li { display: flex; justify-content: space-between; gap: 10px; font: var(--type-small); }
+      .x-olines li span:last-child { font-weight: 600; white-space: nowrap; }
+      .x-olines small { color: var(--x-choc-2); }
+      .x-olines .x-ototal { border-top: 1px dashed var(--x-line); padding-top: 8px; font-weight: 700; font-size: 16px; }
+      .x-ometa { margin: 0; font: var(--type-small); color: var(--x-choc-2); }
+      .x-ometa b { color: var(--x-choc); font-weight: 600; }
+      .x-oacts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .x-oacts .x-btn { padding: 0 12px; min-height: 46px; font-size: 15px; }
+      .x-note { font: var(--type-small); color: var(--x-choc-2); margin: 16px 0 0; }
+      .x-codebox { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; background: var(--x-sand); border-radius: var(--r-m); padding: 10px 10px 10px 16px; margin: 4px 0; }
+      .x-codebox .x-orderno { font-size: 24px; letter-spacing: 0.03em; }
+      .x-btn--sm { min-height: 44px; padding: 0 16px; font-size: 15px; }
+      .x-login { max-width: 420px; margin: 0 auto; display: grid; gap: 14px; }
+      .x-login form { display: grid; gap: 14px; }
+      .x-adminbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+      .x-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+      .x-stat { background: var(--x-choc); color: var(--x-cream); border-radius: 18px; padding: 14px 16px; }
+      .x-stat:first-child { grid-column: 1 / -1; background: var(--x-caramel); }
+      .x-stat span { display: block; font: var(--type-tag); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; opacity: 0.85; }
+      .x-stat b { display: block; font-family: var(--x-serif); font-weight: 800; font-size: 26px; line-height: 1.15; margin-top: 4px; }
+      @media (min-width: 720px) { .x-stats { grid-template-columns: repeat(3, 1fr); } .x-stat:first-child { grid-column: auto; } }
+      .x-tools { display: grid; gap: 10px; margin-bottom: 14px; }
+      .x-tools .x-filters { margin: 0; padding: 2px 0 4px; }
+      .x-ogrid { display: grid; gap: 14px; }
+      @media (min-width: 980px) { .x-ogrid--2 { grid-template-columns: 1fr 1fr; align-items: start; } }
+      .x-octrl { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: end; }
+      .x-octrl label { font: var(--type-tag); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--x-choc-2); display: grid; gap: 4px; }
+      select.x-input { appearance: auto; min-height: 46px; padding: 8px 10px; }
+      .x-admin-view .x-cartbar, .x-admin-view .x-wa { display: none !important; }
+      .x-foot .x-ownerlink { font-size: 12px; color: var(--x-choc-2); }
+      @media (max-width: 380px) { .x-menu a { padding: 0 10px; } }
     </style>
   </head>
   <body class="x-body">
@@ -342,7 +415,8 @@
         <nav class="x-menu" aria-label="Main">
           <a href="#shop">Menu</a>
           <a href="#events">Events</a>
-                    <a href="#visit">Visit us</a>
+          <a href="#visit">Visit us</a>
+          <a href="#orders">My orders</a>
         </nav>
         <button class="x-cartbtn" type="button" id="cart-open" aria-label="Open cart, 0 items">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
@@ -511,6 +585,20 @@
             </ul>
             <p><a class="x-btn" href="https://wa.me/2347036835867?text=Hi%20Tyna's%20Chops%2C%20I'd%20like%20a%20quote%20for%20an%20event" target="_blank" rel="noopener">Get a quote on WhatsApp</a></p>
           </div>
+          <div class="x-planner" id="planner" aria-labelledby="planner-title">
+            <div class="x-planner__left">
+              <h3 id="planner-title">Party tray planner</h3>
+              <p>How many guests are you feeding? We'll suggest trays and small chops from our menu.</p>
+              <div class="x-filters" role="group" aria-label="Number of guests" id="plan-sizes"></div>
+              <div class="x-planner__own"><label for="plan-own">Or enter guests</label><input class="x-input" id="plan-own" type="number" inputmode="numeric" min="5" max="500" placeholder="e.g. 40" /></div>
+            </div>
+            <div>
+              <ul id="plan-items" aria-live="polite"></ul>
+              <div class="x-planner__total" style="margin-top:12px"><span>Total</span><span id="plan-total">₦0</span></div>
+              <p class="x-planner__note" id="plan-note" style="margin:6px 0 14px"></p>
+              <button class="x-btn" type="button" id="plan-add">Add all to cart</button>
+            </div>
+          </div>
         </section>
 
         <section class="x-section" id="visit" aria-labelledby="visit-title">
@@ -558,9 +646,69 @@
         </section>
       </main>
 
+      <section class="x-view" id="orders" aria-labelledby="orders-title" hidden>
+        <div class="x-section__head">
+          <p class="x-eyebrow">Track your order</p>
+          <h2 id="orders-title">My orders</h2>
+          <p>No account needed. Orders placed on this phone show here, or find one with its code and your phone number.</p>
+        </div>
+        <form class="x-panel x-find" id="find-form" novalidate>
+          <h3>Find an order</h3>
+          <div class="x-find__row">
+            <div class="x-field"><label for="find-code">Order code</label><input class="x-input" id="find-code" autocapitalize="characters" autocomplete="off" placeholder="TC-261029-ABCDE" /></div>
+            <div class="x-field"><label for="find-phone">Phone number</label><input class="x-input" id="find-phone" type="tel" inputmode="tel" placeholder="080..." /></div>
+            <button class="x-btn x-btn--primary" type="submit">Find order</button>
+          </div>
+          <p class="x-err" id="find-err" role="alert" hidden></p>
+        </form>
+        <div id="find-result"></div>
+        <h3 class="x-subhead">On this device</h3>
+        <div class="x-ogrid x-ogrid--2" id="my-orders"></div>
+        <p class="x-note">Demo: orders are saved in this browser. In the live shop they'd come from a database, so updates from Tyna's Chops show on any device.</p>
+      </section>
+
+      <section class="x-view" id="admin" aria-labelledby="admin-title" hidden>
+        <div id="admin-login" class="x-login">
+          <div class="x-section__head" style="margin:0">
+            <p class="x-eyebrow">Owner area</p>
+            <h2 id="admin-title">Owner login</h2>
+            <p>Demo login: owner@tynaschops.demo · TynaDemo2026</p>
+          </div>
+          <form class="x-panel" id="login-form" novalidate>
+            <div class="x-field"><label for="lg-email">Email</label><input class="x-input" id="lg-email" type="email" autocomplete="username" required /></div>
+            <div class="x-field"><label for="lg-pw">Password</label><input class="x-input" id="lg-pw" type="password" autocomplete="current-password" required /></div>
+            <p class="x-err" id="lg-err" role="alert" hidden></p>
+            <button class="x-btn x-btn--primary x-btn--block" type="submit" id="lg-submit">Sign in</button>
+          </form>
+        </div>
+        <div id="admin-dash" hidden>
+          <div class="x-adminbar">
+            <div class="x-section__head" style="margin:0"><p class="x-eyebrow">Owner dashboard</p><h2>Orders</h2></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="x-btn x-btn--ghost x-btn--sm" type="button" id="adm-sample">Load sample orders</button>
+              <button class="x-btn x-btn--dark x-btn--sm" type="button" id="adm-logout">Log out</button>
+            </div>
+          </div>
+          <div class="x-stats" id="adm-stats"></div>
+          <div class="x-tools">
+            <div class="x-filters" role="group" aria-label="Filter orders" id="adm-tabs">
+              <button class="x-filter" type="button" data-tab="awaiting" aria-pressed="true">Awaiting</button>
+              <button class="x-filter" type="button" data-tab="done" aria-pressed="false">Delivered</button>
+              <button class="x-filter" type="button" data-tab="unpaid" aria-pressed="false">Unpaid</button>
+              <button class="x-filter" type="button" data-tab="all" aria-pressed="false">All</button>
+            </div>
+            <label class="x-sr" for="adm-q">Search orders</label>
+            <input class="x-input" id="adm-q" type="search" placeholder="Search code, name or phone" />
+          </div>
+          <div class="x-ogrid x-ogrid--2" id="adm-list"></div>
+          <p class="x-note">Demo: orders live in this browser's storage. A real database would make every order and status update show on any device.</p>
+        </div>
+      </section>
+
       <footer class="x-foot">
         <p>© Tyna's Chops · Cakes, small chops, food trays, soup bowls and snacks.</p>
         <p>Demo site by Sajjad · <a href="https://sajjadblog.vercel.app" target="_blank" rel="noopener">sajjadblog.vercel.app</a></p>
+        <p><a class="x-ownerlink" href="#admin">Owner login</a></p>
       </footer>
 
       <a class="x-wa" href="https://wa.me/2347036835867" target="_blank" rel="noopener" aria-label="Chat with Tyna's Chops on WhatsApp">
@@ -645,12 +793,13 @@
             <div class="x-done">
               <div class="x-done__tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
               <h3>Order confirmed</h3>
-              <p>Order number</p>
-              <p class="x-orderno" id="done-no">GB-00000</p>
-              <p>Send it to Tyna's Chops on WhatsApp so the team can confirm.</p>
+              <p>Your order code</p>
+              <div class="x-codebox"><span class="x-orderno" id="done-no">TC-000000-00000</span><button class="x-btn x-btn--ghost x-btn--sm" type="button" id="done-copy">Copy</button></div>
+              <p>Keep this code to track your order. Send it to Tyna's Chops on WhatsApp so the team can confirm.</p>
             </div>
             <div class="x-mini"><ul id="done-items"></ul><dl class="x-sum" id="done-sum"></dl><dl class="x-facts" id="done-facts"></dl></div>
             <a class="x-btn x-btn--wa x-btn--block" id="done-wa" href="https://wa.me/2347036835867" target="_blank" rel="noopener">Send order to Tyna's Chops on WhatsApp</a>
+            <a class="x-btn x-btn--dark x-btn--block" id="done-track" href="#orders">Track it in My orders</a>
             <button class="x-btn x-btn--ghost x-btn--block" type="button" data-close>Continue shopping</button>
           </div>
         </div>
@@ -689,6 +838,30 @@
           });
         });
 
+        /* storage helpers */
+        function load(k, dflt) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? dflt : v; } catch (e) { return dflt; } }
+        function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+        function cardById(id) { return $('.x-card[data-id="' + id + '"]'); }
+        function optInput(pid, value) {
+          var card = cardById(pid); if (!card) return null;
+          return $$('input[type="radio"]', card).find(function (r) { return r.value === value; }) || null;
+        }
+        function priceOf(pid, value) { var i = optInput(pid, value); return i ? +i.dataset.price : 0; }
+        /* add a line to the cart from a product id + option value (cards, planner, reorder) */
+        function addLine(pid, value, msg, qty) {
+          var card = cardById(pid), input = optInput(pid, value);
+          if (!card || !input) return false;
+          msg = msg || "";
+          var it = itemFor(card, input), key = pid + "|" + value + "|" + msg;
+          var line = cart.find(function (l) { return l.key === key; });
+          if (line) line.qty = Math.min(99, line.qty + qty);
+          else cart.push({ key: key, pid: pid, value: value, name: it.name, opt: it.opt, msg: msg, price: +input.dataset.price, qty: Math.min(99, qty), img: $(".x-card__media img", card) });
+          return true;
+        }
+        function saveCart() {
+          save("tc-cart", cart.map(function (l) { return { pid: l.pid, value: l.value, msg: l.msg, qty: l.qty }; }));
+        }
+
         /* product cards */
         function itemFor(card, input) {
           var id = card.dataset.id, v = input.value, name = card.dataset.name, opt = v;
@@ -707,10 +880,7 @@
           $("[data-add]", card).addEventListener("click", function () {
             var input = checked(), it = itemFor(card, input);
             var msgEl = $("[data-msg]", card), msg = msgEl ? msgEl.value.trim() : "";
-            var key = card.dataset.id + "|" + input.value + "|" + msg;
-            var line = cart.find(function (l) { return l.key === key; });
-            if (line) line.qty = Math.min(99, line.qty + qty);
-            else cart.push({ key: key, name: it.name, opt: it.opt, msg: msg, price: +input.dataset.price, qty: qty, img: $(".x-card__media img", card) });
+            addLine(card.dataset.id, input.value, msg, qty);
             toast("Added " + qty + " × " + it.name + (it.opt ? " (" + it.opt + ")" : ""));
             qty = 1; out.textContent = 1; if (msgEl) msgEl.value = "";
             var badge = $("#cart-count"); badge.classList.add("x-bump"); setTimeout(function () { badge.classList.remove("x-bump"); }, 200);
@@ -739,8 +909,11 @@
           $("#cartbar-total").textContent = naira(t.total);
           body.classList.toggle("x-has-bar", t.count > 0);
           var box = $("#cart-lines");
+          saveCart();
           if (!cart.length) {
-            box.innerHTML = '<div class="x-empty"><p>Your cart is empty.</p><button class="x-btn x-btn--ghost" type="button" data-browse>Browse the shop</button></div>';
+            box.innerHTML = '<div class="x-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--x-caramel);margin-bottom:10px"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>' +
+              '<h3 style="font-size:20px;margin-bottom:6px">Your cart is empty</h3><p>Add trays, cakes or small chops from the menu, or let the party planner build a combo for you.</p>' +
+              '<div style="display:grid;gap:8px;max-width:260px;margin:0 auto"><button class="x-btn x-btn--primary" type="button" data-browse>Browse the menu</button><button class="x-btn x-btn--ghost" type="button" data-plan>Plan a party</button></div></div>';
           } else {
             box.innerHTML = cart.map(function (l, i) {
               return '<div class="x-line"><div class="x-line__thumb" data-thumb="' + i + '"></div><div><h3>' + esc(l.name) + '</h3>' +
@@ -764,7 +937,8 @@
 
         $("#cart-lines").addEventListener("click", function (e) {
           var q = e.target.closest("[data-q]"), rm = e.target.closest("[data-rm]");
-          if (e.target.closest("[data-browse]")) { closeAll(); location.hash = "#shop"; return; }
+          if (e.target.closest("[data-browse]")) { closeAll(); go("#shop"); return; }
+          if (e.target.closest("[data-plan]")) { closeAll(); go("#planner"); return; }
           if (q) {
             var l = cart[+q.dataset.q]; l.qty += +q.dataset.d;
             if (l.qty < 1) cart.splice(+q.dataset.q, 1); else if (l.qty > 99) l.qty = 99;
@@ -813,8 +987,12 @@
 
         /* checkout form */
         var dateEl = $("#co-date");
-        var d = new Date(), today = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+        var pad = function (n) { return String(n).padStart(2, "0"); };
+        function todayStr() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+        function nowHM() { var d = new Date(); return pad(d.getHours()) + ":" + pad(d.getMinutes()); }
+        var today = todayStr();
         dateEl.min = today;
+        dateEl.addEventListener("focus", function () { dateEl.min = todayStr(); });
         function payMethod() { return $('input[name="pay"]:checked').value; }
         $$('input[name="pay"]').forEach(function (r) {
           r.addEventListener("change", function () { $("#co-submit").textContent = payMethod() === "online" ? "Continue to payment" : "Place order"; });
@@ -828,7 +1006,9 @@
           need.forEach(function (n) { var el = $(n[0]), bad = !el.value.trim(); el.classList.toggle("x-invalid", bad); el.setAttribute("aria-invalid", bad); if (bad) missing.push(n); });
           var phone = $("#co-phone"), digits = phone.value.replace(/\D/g, "");
           if (phone.value.trim() && digits.length < 10) { phone.classList.add("x-invalid"); missing.push(["#co-phone", "a valid phone number"]); }
-          if (dateEl.value && dateEl.value < today) { dateEl.classList.add("x-invalid"); missing.push(["#co-date", "a date from today on"]); }
+          today = todayStr(); dateEl.min = today;
+          if (dateEl.value && dateEl.value < today) { dateEl.classList.add("x-invalid"); missing.push(["#co-date", "a date from today on (not in the past)"]); }
+          else if (dateEl.value === today && $("#co-time").value && $("#co-time").value <= nowHM()) { $("#co-time").classList.add("x-invalid"); missing.push(["#co-time", "a time later today"]); }
           var err = $("#co-err");
           if (missing.length) {
             err.textContent = "Please add " + missing.map(function (m) { return m[1]; }).join(", ") + ".";
@@ -867,17 +1047,31 @@
 
         function confirmOrder() {
           var t = totals();
+          var online = payMethod() === "online";
           var o = {
-            no: "GB-" + Math.floor(10000 + Math.random() * 90000),
+            no: newCode(),
             lines: cart.map(function (l) { return { label: lineLabel(l), msg: l.msg, qty: l.qty, amt: l.price * l.qty }; }),
             t: t, fulfil: fulfil,
             name: $("#co-name").value.trim(), phone: $("#co-phone").value.trim(),
             addr: $("#co-addr").value.trim(),
             when: niceDate(dateEl.value) + ", " + niceTime($("#co-time").value),
             notes: $("#co-notes").value.trim(),
-            pay: payMethod() === "online" ? "Paid online (card / transfer, demo)" : "Pay on delivery"
+            pay: online ? "Paid online (card / transfer, demo)" : "Pay on delivery"
           };
           lastOrder = o;
+          /* save the order on this device */
+          var rec = {
+            code: o.no, at: new Date().toISOString(),
+            name: o.name, phone: o.phone,
+            fulfil: o.fulfil, addr: o.fulfil === "delivery" ? o.addr : "",
+            date: dateEl.value, time: $("#co-time").value, when: o.when, notes: o.notes,
+            items: cart.map(function (l) { return { pid: l.pid, value: l.value, name: l.name, opt: l.opt, msg: l.msg, price: l.price, qty: l.qty, amt: l.price * l.qty }; }),
+            sub: t.sub, fee: t.fee, total: t.total,
+            pay: online ? "online" : "cod", payLabel: online ? "Paid online (card / transfer, demo)" : "Pay on delivery",
+            paid: online, paidAt: online ? new Date().toISOString() : null,
+            status: "received", statusLabel: "Order received"
+          };
+          var all = loadOrders(); all.unshift(rec); saveOrders(all);
           $("#done-no").textContent = o.no;
           $("#done-items").innerHTML = o.lines.map(function (l) { return '<li><span>' + l.qty + ' × ' + esc(l.label) + (l.msg ? '<br><small>Message: “' + esc(l.msg) + '”</small>' : '') + '</span><span>' + naira(l.amt) + '</span></li>'; }).join("");
           $("#done-sum").innerHTML = sumHTML(t);
@@ -885,7 +1079,7 @@
           if (o.notes) facts.push(["Notes", o.notes]);
           $("#done-facts").innerHTML = facts.map(function (f) { return "<dt>" + f[0] + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("");
 
-          var msg = ["Hi Tyna's Chops, I just placed order " + o.no + " on your website.", "", "Items:"];
+          var msg = ["Hi Tyna's Chops, I just placed order " + o.no + " on your website.", "Order code: " + o.no, "", "Items:"];
           o.lines.forEach(function (l) { msg.push("- " + l.qty + " x " + l.label + ": " + naira(l.amt)); if (l.msg) msg.push("  Message on cake: " + l.msg); });
           msg.push("", "Subtotal: " + naira(t.sub), (o.fulfil === "delivery" ? "Delivery within Abuja: " + naira(t.fee) : "Pickup in Gwarinpa: Free"), "Total: " + naira(t.total), "Payment: " + o.pay, "");
           msg.push("Name: " + o.name, "Phone: " + o.phone);
@@ -901,7 +1095,281 @@
           render();
         }
 
+        /* ---------- order codes + storage ---------- */
+        var CODE_CHARS = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ"; /* no 0/O/1/I */
+        function loadOrders() { var v = load("tc-orders", []); return Array.isArray(v) ? v : []; }
+        function saveOrders(list) { save("tc-orders", list); }
+        function newCode() {
+          var taken = {}; loadOrders().forEach(function (o) { taken[o.code] = 1; });
+          var d = new Date(), ymd = String(d.getFullYear()).slice(2) + pad(d.getMonth() + 1) + pad(d.getDate()), code;
+          do {
+            var r = new Uint32Array(5); crypto.getRandomValues(r);
+            code = "TC-" + ymd + "-" + [].map.call(r, function (x) { return CODE_CHARS[x % CODE_CHARS.length]; }).join("");
+          } while (taken[code]);
+          return code;
+        }
+        function normPhone(p) {
+          var d = String(p || "").replace(/\D/g, "");
+          if (d.indexOf("234") === 0) d = "0" + d.slice(3);
+          if (d.length === 10 && d[0] !== "0") d = "0" + d;
+          return d;
+        }
+        var STAGES = ["received", "preparing", "ready", "done"];
+        function stageLabels(o) {
+          return o.fulfil === "delivery" ? ["Order received", "Preparing", "Out for delivery", "Delivered"] : ["Order received", "Preparing", "Ready for pickup", "Picked up"];
+        }
+        function statusText(o) { return stageLabels(o)[Math.max(0, STAGES.indexOf(o.status))]; }
+        function placedAt(iso) {
+          var dt = new Date(iso);
+          return isNaN(dt) ? "" : dt.toLocaleDateString("en-GB", { day: "numeric", month: "short" }) + ", " + niceTime(pad(dt.getHours()) + ":" + pad(dt.getMinutes()));
+        }
+        function updateOrder(code, patch) {
+          var all = loadOrders(), o = all.find(function (x) { return x.code === code; });
+          if (!o) return; Object.keys(patch).forEach(function (k) { o[k] = patch[k]; }); saveOrders(all);
+        }
+        function waAsk(o) { return "https://wa.me/" + WA + "?text=" + encodeURIComponent("Hi Tyna's Chops, I have a question about my order " + o.code + "."); }
+
+        function trackHTML(o) {
+          var at = STAGES.indexOf(o.status);
+          return '<ol class="x-track" aria-label="Order progress">' + stageLabels(o).map(function (l, i) {
+            return '<li class="' + (i <= at ? "x-on" : "") + (i === at ? " x-now" : "") + '"' + (i === at ? ' aria-current="step"' : "") + '>' + l + '</li>';
+          }).join("") + '</ol>';
+        }
+        function linesHTML(o) {
+          return '<ul class="x-olines">' + o.items.map(function (l) {
+            return '<li><span>' + l.qty + ' × ' + esc(l.name + (l.opt ? " · " + l.opt : "")) + (l.msg ? '<br><small>Message: “' + esc(l.msg) + '”</small>' : '') + '</span><span>' + naira(l.amt) + '</span></li>';
+          }).join("") + (o.fee ? '<li><span>Delivery within Abuja</span><span>' + naira(o.fee) + '</span></li>' : '') +
+            '<li class="x-ototal"><span>Total</span><span>' + naira(o.total) + '</span></li></ul>';
+        }
+        function tagsHTML(o) {
+          var done = o.status === "done";
+          return '<div class="x-tags"><span class="x-tag' + (done ? " x-tag--done" : "") + '">' + statusText(o) + '</span>' +
+            '<span class="x-tag ' + (o.paid ? "x-tag--paid" : "x-tag--unpaid") + '">' + (o.paid ? "Paid" : "Unpaid") + '</span></div>';
+        }
+        function customerCard(o) {
+          return '<article class="x-panel x-ocard" data-code="' + esc(o.code) + '">' +
+            '<div class="x-ocard__top"><div><div class="x-code">' + esc(o.code) + '</div><small>Placed ' + placedAt(o.at) + '</small></div>' + tagsHTML(o) + '</div>' +
+            trackHTML(o) +
+            '<p class="x-ometa"><b>' + (o.fulfil === "delivery" ? "Delivery" : "Pickup in Gwarinpa") + '</b> · needed ' + esc(o.when) + (o.addr ? '<br>' + esc(o.addr) : '') + '</p>' +
+            linesHTML(o) +
+            '<div class="x-oacts"><button class="x-btn x-btn--primary" type="button" data-again="' + esc(o.code) + '">Order again</button>' +
+            '<a class="x-btn x-btn--wa" href="' + waAsk(o) + '" target="_blank" rel="noopener">Ask about this order</a></div></article>';
+        }
+
+        /* ---------- My orders (#orders) ---------- */
+        function renderOrders() {
+          var mine = loadOrders().filter(function (o) { return !o.sample; });
+          $("#my-orders").innerHTML = mine.length ? mine.map(customerCard).join("") :
+            '<div class="x-panel x-empty"><p>No orders on this device yet. Orders you place here will show up with live status.</p><a class="x-btn x-btn--primary" href="#shop">Browse the menu</a></div>';
+          var fc = $("#find-result").dataset.code;
+          if (fc) { var f = loadOrders().find(function (o) { return o.code === fc; }); $("#find-result").innerHTML = f ? '<h3 class="x-subhead">Found order</h3>' + customerCard(f) : ""; }
+        }
+        $("#find-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          var code = $("#find-code").value.toUpperCase().replace(/\s+/g, ""), ph = normPhone($("#find-phone").value), err = $("#find-err");
+          if (!code || ph.length < 10) { err.textContent = "Enter your order code and the phone number you ordered with."; err.hidden = false; return; }
+          var o = loadOrders().find(function (x) { return x.code === code && normPhone(x.phone) === ph; });
+          if (!o) { err.textContent = "We couldn't find an order with that code and phone number on this device. Check both, or ask us on WhatsApp."; err.hidden = false; $("#find-result").dataset.code = ""; $("#find-result").innerHTML = ""; return; }
+          err.hidden = true; $("#find-result").dataset.code = o.code; renderOrders();
+          $("#find-result").scrollIntoView({ block: "start" });
+        });
+        document.addEventListener("click", function (e) {
+          var b = e.target.closest("[data-again]"); if (!b) return;
+          var o = loadOrders().find(function (x) { return x.code === b.dataset.again; }); if (!o) return;
+          var n = 0; o.items.forEach(function (l) { if (addLine(l.pid, l.value, l.msg, l.qty)) n++; });
+          render(); go("#shop"); openDrawer();
+          toast(n ? "Added " + o.code + " to your cart" : "Those items aren't on the menu any more");
+        });
+
+        /* confirmation screen: copy + track */
+        $("#done-copy").addEventListener("click", function () {
+          var c = $("#done-no").textContent;
+          function ok() { toast("Order code copied"); }
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(c).then(ok, fallback); else fallback();
+          function fallback() { var ta = document.createElement("textarea"); ta.value = c; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); ok(); } catch (x) {} ta.remove(); }
+        });
+        $("#done-track").addEventListener("click", function (e) { e.preventDefault(); lastFocus = null; closeAll(); go("#orders"); });
+
+        /* ---------- Owner dashboard (#admin) ---------- */
+        var OWNER_HASH = "0f36d2ecbb957aeac02e9de743a603ca7c197888e50a6289ec2d2a065ea73fcf";
+        function sha256(t) {
+          return crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)).then(function (b) {
+            return [].map.call(new Uint8Array(b), function (x) { return x.toString(16).padStart(2, "0"); }).join("");
+          });
+        }
+        function isOwner() { try { return sessionStorage.getItem("tc-owner") === "1"; } catch (e) { return false; } }
+        var lockTimer = null;
+        function lockState() {
+          var until = load("tc-lock", 0), left = Math.ceil((until - Date.now()) / 1000);
+          var on = left > 0, err = $("#lg-err");
+          $("#lg-submit").disabled = on; $("#lg-email").disabled = on; $("#lg-pw").disabled = on;
+          if (on) { err.textContent = "Too many attempts. Try again in " + left + "s."; err.hidden = false; clearTimeout(lockTimer); lockTimer = setTimeout(lockState, 1000); }
+          else if (/Too many/.test(err.textContent)) { err.hidden = true; err.textContent = ""; }
+          return on;
+        }
+        $("#login-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (lockState()) return;
+          var err = $("#lg-err"), btn = $("#lg-submit");
+          if (!window.crypto || !crypto.subtle) { err.textContent = "Secure login needs https."; err.hidden = false; return; }
+          btn.disabled = true; btn.textContent = "Checking…";
+          sha256($("#lg-email").value.trim().toLowerCase() + ":" + $("#lg-pw").value).then(function (h) {
+            btn.disabled = false; btn.textContent = "Sign in";
+            if (h === OWNER_HASH) {
+              save("tc-fails", 0); try { sessionStorage.setItem("tc-owner", "1"); } catch (x) {}
+              $("#lg-pw").value = ""; err.hidden = true; renderAdmin(); return;
+            }
+            var fails = load("tc-fails", 0) + 1;
+            if (fails >= 5) { save("tc-lock", Date.now() + 60000); save("tc-fails", 0); lockState(); }
+            else { save("tc-fails", fails); err.textContent = "Wrong email or password. " + (5 - fails) + " " + (5 - fails === 1 ? "try" : "tries") + " left."; err.hidden = false; }
+          });
+        });
+        $("#adm-logout").addEventListener("click", function () { try { sessionStorage.removeItem("tc-owner"); } catch (x) {} renderAdmin(); toast("Logged out"); });
+
+        var admTab = "awaiting";
+        $$("#adm-tabs .x-filter").forEach(function (b) {
+          b.addEventListener("click", function () { admTab = b.dataset.tab; $$("#adm-tabs .x-filter").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); }); renderAdmin(); });
+        });
+        $("#adm-q").addEventListener("input", function () { renderAdmin(); });
+
+        function adminCard(o) {
+          var labels = stageLabels(o);
+          return '<article class="x-panel x-ocard" data-code="' + esc(o.code) + '">' +
+            '<div class="x-ocard__top"><div><div class="x-code">' + esc(o.code) + '</div><small>Placed ' + placedAt(o.at) + (o.sample ? ' · sample' : '') + '</small></div>' + tagsHTML(o) + '</div>' +
+            '<p class="x-ometa"><b>' + esc(o.name) + '</b> · <a href="tel:' + esc(o.phone) + '">' + esc(o.phone) + '</a><br>' +
+            (o.fulfil === "delivery" ? 'Deliver to ' + esc(o.addr) : 'Pickup in Gwarinpa') + '<br>Needed ' + esc(o.when) + ' · ' + esc(o.payLabel) + (o.notes ? '<br>Notes: ' + esc(o.notes) : '') + '</p>' +
+            linesHTML(o) +
+            '<div class="x-octrl"><label>Status<select class="x-input" data-status="' + esc(o.code) + '" aria-label="Status of ' + esc(o.code) + '">' +
+            STAGES.map(function (s, i) { return '<option value="' + s + '"' + (s === o.status ? " selected" : "") + '>' + labels[i] + '</option>'; }).join("") + '</select></label>' +
+            (o.paid ? '<span class="x-tag x-tag--paid" style="min-height:46px;padding:0 14px">Paid</span>' : '<button class="x-btn x-btn--primary x-btn--sm" type="button" data-paid="' + esc(o.code) + '">Mark as paid</button>') +
+            '</div></article>';
+        }
+        function renderAdmin() {
+          var owner = isOwner();
+          $("#admin-login").hidden = owner; $("#admin-dash").hidden = !owner;
+          if (!owner) { lockState(); return; }
+          var all = loadOrders();
+          var revenue = all.filter(function (o) { return o.paid; }).reduce(function (s, o) { return s + o.total; }, 0);
+          var awaiting = all.filter(function (o) { return o.status !== "done"; }).length;
+          var unpaidAmt = all.filter(function (o) { return !o.paid; }).reduce(function (s, o) { return s + o.total; }, 0);
+          $("#adm-stats").innerHTML = '<div class="x-stat"><span>Revenue (paid orders)</span><b>' + naira(revenue) + '</b></div>' +
+            '<div class="x-stat"><span>Awaiting delivery</span><b>' + awaiting + '</b></div>' +
+            '<div class="x-stat"><span>Unpaid, outstanding</span><b>' + naira(unpaidAmt) + '</b></div>';
+          var q = $("#adm-q").value.trim().toLowerCase(), qp = normPhone(q);
+          var list = all.filter(function (o) {
+            if (admTab === "awaiting" && o.status === "done") return false;
+            if (admTab === "done" && o.status !== "done") return false;
+            if (admTab === "unpaid" && o.paid) return false;
+            if (!q) return true;
+            return o.code.toLowerCase().indexOf(q) > -1 || o.name.toLowerCase().indexOf(q) > -1 || (qp.length >= 3 && normPhone(o.phone).indexOf(qp) > -1);
+          });
+          $("#adm-list").innerHTML = list.length ? list.map(adminCard).join("") :
+            '<div class="x-panel x-empty"><p>' + (all.length ? "No orders match this view." : "No orders yet. Load sample orders to try the dashboard.") + '</p></div>';
+        }
+        $("#adm-list").addEventListener("change", function (e) {
+          var s = e.target.closest("[data-status]"); if (!s) return;
+          var o = loadOrders().find(function (x) { return x.code === s.dataset.status; });
+          var labels = stageLabels(o || {}), v = s.value;
+          updateOrder(s.dataset.status, { status: v, statusLabel: labels[STAGES.indexOf(v)], updatedAt: new Date().toISOString() });
+          toast(s.dataset.status + ": " + labels[STAGES.indexOf(v)]); renderAdmin();
+        });
+        $("#adm-list").addEventListener("click", function (e) {
+          var b = e.target.closest("[data-paid]"); if (!b) return;
+          updateOrder(b.dataset.paid, { paid: true, paidAt: new Date().toISOString() }); toast(b.dataset.paid + " marked as paid"); renderAdmin();
+        });
+
+        /* sample orders: real products and prices, Abuja addresses */
+        $("#adm-sample").addEventListener("click", function () {
+          function it(pid, value, qty, msg) {
+            var card = cardById(pid), input = optInput(pid, value), n = itemFor(card, input), p = +input.dataset.price;
+            return { pid: pid, value: value, name: n.name, opt: n.opt, msg: msg || "", price: p, qty: qty, amt: p * qty };
+          }
+          function day(off) { var d = new Date(); d.setDate(d.getDate() + off); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+          var specs = [
+            { name: "Amaka Obi", phone: "08031234567", fulfil: "delivery", addr: "12 Aminu Kano Crescent, Wuse 2", d: 0, t: "15:00", h: 3, items: [it("tray", "Large (serves 10–12)", 1), it("chops", "Party tray (serves 10)", 1)], pay: "online", status: "preparing" },
+            { name: "Ibrahim Musa", phone: "08069876543", fulfil: "pickup", addr: "", d: 0, t: "17:30", h: 1, items: [it("platter", "Platter", 2)], pay: "cod", status: "received" },
+            { name: "Funke Adeyemi", phone: "07012345678", fulfil: "delivery", addr: "5 Gana Street, Maitama", d: 0, t: "13:00", h: 20, items: [it("cake", "Cake + small chops combo", 1, "Happy 40th, Tunde!")], pay: "online", status: "ready" },
+            { name: "Chinedu Eze", phone: "08123456789", fulfil: "delivery", addr: "Block C, Flat 4, Jabi", d: -1, t: "12:00", h: 30, items: [it("soup", "4 litres", 1), it("snacks", "Meat pie", 10)], pay: "cod", status: "done", paid: true },
+            { name: "Hauwa Bello", phone: "09087654321", fulfil: "pickup", addr: "", d: -1, t: "16:00", h: 28, items: [it("tray", "Medium (serves 6–8)", 1), it("cake", "6-inch cake", 1, "Happy birthday Zainab")], pay: "online", status: "done" },
+            { name: "Emeka Nwosu", phone: "08055551234", fulfil: "delivery", addr: "14 Lagos Street, Garki Area 10", d: 1, t: "11:00", h: 2, items: [it("tray", "Small (serves 3–4)", 2), it("chops", "Mini pack", 3)], pay: "cod", status: "received" }
+          ];
+          var all = loadOrders().filter(function (o) { return !o.sample; });
+          saveOrders(all);
+          var made = specs.map(function (s) {
+            var sub = s.items.reduce(function (a, l) { return a + l.amt; }, 0), fee = s.fulfil === "delivery" ? DELIVERY_FEE : 0;
+            var paid = s.pay === "online" || !!s.paid, at = new Date(Date.now() - s.h * 3600e3).toISOString();
+            var o = { code: newCode(), at: at, name: s.name, phone: s.phone, fulfil: s.fulfil, addr: s.addr, date: day(s.d), time: s.t,
+              when: niceDate(day(s.d)) + ", " + niceTime(s.t), notes: "", items: s.items, sub: sub, fee: fee, total: sub + fee,
+              pay: s.pay, payLabel: s.pay === "online" ? "Paid online (card / transfer, demo)" : "Pay on delivery", paid: paid, paidAt: paid ? at : null,
+              status: s.status, sample: true };
+            o.statusLabel = statusText(o);
+            var cur = loadOrders(); cur.push(o); saveOrders(cur); /* saved one by one so newCode() sees earlier ones */
+            return o;
+          });
+          var sorted = loadOrders().sort(function (a, b) { return a.at < b.at ? 1 : -1; }); saveOrders(sorted);
+          toast("Loaded " + made.length + " sample orders"); renderAdmin();
+        });
+
+        /* ---------- party tray planner ---------- */
+        var PLAN_SIZES = [10, 20, 30, 50, 100], planGuests = 20;
+        $("#plan-sizes").innerHTML = PLAN_SIZES.map(function (n) { return '<button class="x-filter" type="button" data-g="' + n + '" aria-pressed="' + (n === planGuests) + '">' + n + '</button>'; }).join("");
+        function planFor(g) {
+          /* main food: large trays (serve 10–12, ~11 each); top up with a medium or small tray */
+          var large = Math.floor(g / 11), rem = g - large * 11, med = 0, small = 0;
+          if (rem > large) { if (rem > 8) large++; else if (rem > 4) med = 1; else small = 1; }
+          if (!large && !med && !small) small = 1;
+          var chops = Math.max(1, Math.ceil(g / 10)); /* party tray of small chops serves 10 */
+          var rows = [];
+          if (large) rows.push({ pid: "tray", value: "Large (serves 10–12)", qty: large, label: "Party Food Tray, large (serves 10–12)" });
+          if (med) rows.push({ pid: "tray", value: "Medium (serves 6–8)", qty: med, label: "Party Food Tray, medium (serves 6–8)" });
+          if (small) rows.push({ pid: "tray", value: "Small (serves 3–4)", qty: small, label: "Party Food Tray, small (serves 3–4)" });
+          rows.push({ pid: "chops", value: "Party tray (serves 10)", qty: chops, label: "Small Chops party tray (serves 10)" });
+          rows.forEach(function (r) { r.price = priceOf(r.pid, r.value); r.amt = r.price * r.qty; });
+          return rows;
+        }
+        function renderPlan() {
+          var rows = planFor(planGuests), total = rows.reduce(function (s, r) { return s + r.amt; }, 0);
+          $("#plan-items").innerHTML = rows.map(function (r) { return '<li><span>' + r.qty + ' × ' + esc(r.label) + '</span><b>' + naira(r.amt) + '</b></li>'; }).join("");
+          $("#plan-total").textContent = naira(total);
+          $("#plan-note").textContent = "Suggested for " + planGuests + " guests, about " + naira(Math.round(total / planGuests / 100) * 100) + " per guest. Want cake, soups or drinks too? Add them from the menu, or ask us on WhatsApp.";
+          $$("#plan-sizes .x-filter").forEach(function (b) { b.setAttribute("aria-pressed", +b.dataset.g === planGuests ? "true" : "false"); });
+        }
+        $("#plan-sizes").addEventListener("click", function (e) {
+          var b = e.target.closest("[data-g]"); if (!b) return; planGuests = +b.dataset.g; $("#plan-own").value = ""; renderPlan();
+        });
+        $("#plan-own").addEventListener("input", function () {
+          var n = parseInt(this.value, 10); if (n >= 5 && n <= 500) { planGuests = n; renderPlan(); }
+        });
+        $("#plan-add").addEventListener("click", function () {
+          planFor(planGuests).forEach(function (r) { addLine(r.pid, r.value, "", r.qty); });
+          render(); toast("Added the " + planGuests + "-guest combo to your cart"); openDrawer();
+        });
+        renderPlan();
+
+        /* ---------- simple hash routing ---------- */
+        var mainEl = $("main"), views = { "#orders": $("#orders"), "#admin": $("#admin") };
+        function route() {
+          var h = location.hash, v = views[h];
+          mainEl.hidden = !!v;
+          Object.keys(views).forEach(function (k) { views[k].hidden = k !== h; });
+          body.classList.toggle("x-admin-view", h === "#admin");
+          if (h === "#orders") renderOrders();
+          if (h === "#admin") renderAdmin();
+          if (v) window.scrollTo(0, 0);
+          else if (h.length > 1) { var el = document.getElementById(h.slice(1)); if (el) setTimeout(function () { el.scrollIntoView(); }, 0); }
+        }
+        function go(h) { if (location.hash === h) route(); else location.hash = h; }
+        window.addEventListener("hashchange", route);
+        /* keep views fresh when another tab (e.g. the owner dashboard) changes orders */
+        window.addEventListener("storage", function (e) {
+          if (e.key === "tc-orders") { if (location.hash === "#orders") renderOrders(); if (location.hash === "#admin") renderAdmin(); }
+        });
+
+        /* restore the saved cart */
+        load("tc-cart", []).forEach(function (l) { if (l && l.pid && l.qty > 0) addLine(l.pid, l.value, l.msg, l.qty); });
+
         render();
+        route();
       })();
     </script>
   </body>
